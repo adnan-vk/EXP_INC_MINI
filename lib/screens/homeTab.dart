@@ -24,6 +24,30 @@ class _hometabState extends State<hometab> {
                 border: OutlineInputBorder(),
                 labelText: "Search"
               ),
+            ),
+            Text("Current Balance"),
+            Text("9974",style: TextStyle(fontSize: 30),),
+            ListView.builder(itemBuilder: (context, index) {
+              Card(
+                child: Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text("Salary"),
+                        Text("Get the salary"),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text("50000"),
+                        Text("05-01-2023"),
+                      ],
+                    )
+                  ],
+                ),
+              );
+            },
+            itemCount: 10,
             )
           ],
         ),

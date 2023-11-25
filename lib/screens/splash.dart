@@ -17,7 +17,7 @@ class _splashState extends State<splash> {
   }
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    double height=MediaQuery.of(context).size.height;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -25,7 +25,7 @@ class _splashState extends State<splash> {
           child:Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Image.asset('assets/logo 2.png',)                
+              Image.asset('assets/logo 2.png',height: height*0.3,)
             ],
           )
         ),
