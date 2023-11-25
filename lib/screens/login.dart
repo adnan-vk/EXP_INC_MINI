@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini/screens/homeTab.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class login extends StatefulWidget {
   const login({super.key});
@@ -7,6 +8,11 @@ class login extends StatefulWidget {
   @override
   State<login> createState() => _loginState();
 }
+final _userController = TextEditingController();
+final _passwordController = TextEditingController();
+bool _dataMatched = true;
+
+final _formKey = GlobalKey<FormState>();
 
 class _loginState extends State<login> {
   @override
@@ -19,6 +25,7 @@ class _loginState extends State<login> {
         title: Text("Login Page"),
       ),
       body: Stack(
+        key: _formKey,
         children: [
           Container(
             width: double.infinity,
@@ -51,33 +58,73 @@ class _loginState extends State<login> {
                 scrollDirection: Axis.vertical,
                 child: Padding(
                   padding: const EdgeInsets.only(
-                    top: 100
+                    top: 30
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 15,right: 15),
                     child: Column(
                       children: [
+                        Text('LOGIN',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,
+                        color: const Color.fromARGB(255, 14, 51, 82))),
+                        SizedBox(height: 30,),
                         TextFormField(
+                          style: TextStyle(color: Colors.white),
+                          controller: _userController,
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                          hintText: "user id"
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(30)
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            labelText: "User id",labelStyle: TextStyle(color: Colors.white)
                           ),
+                          validator: (value) {
+                          if(value == null || value.isEmpty){
+                          return "value is  empty";
+                          }else{
+                          return null;
+                          }
+                          },
                         ),
                         SizedBox(
                           height: 20,
                         ),
                         TextFormField(
+                          controller: _passwordController,
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                          hintText: "password"
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                              ),
+                              borderRadius: BorderRadius.circular(30)
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white
+                              ),
+                              borderRadius: BorderRadius.circular(30)
+                            ),
+                            labelText: "Password",labelStyle: TextStyle(color: Colors.white),
                           ),
+                          validator: (value) {
+                          if(value == null || value.isEmpty){
+                          return "value is  empty";
+                          }else{
+                          return null;
+                          }
+                          },
                         ),
+                        SizedBox(height: 20,),
                         ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor: MaterialStatePropertyAll(Colors.white),
                           ),
                           onPressed: (){
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>hometab()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) =>hometab()
+                            ));
                           }, 
                         child: Text('login',style: TextStyle(color: Colors.black),))
                       ],
@@ -89,49 +136,14 @@ class _loginState extends State<login> {
           ),
         ],
       )
-
-
-      // SingleChildScrollView(
-      //   scrollDirection: Axis.vertical,
-      //   child: Container(
-      //     alignment: Alignment.bottomCenter,
-      //     color: Color.fromARGB(255, 158, 201, 236),
-      //     child: Padding(
-      //     padding: const EdgeInsets.all(10),
-      //     child: Column(
-      //       children: [
-      //         Image.asset('assets/logo 2.png'),
-      //         SizedBox(
-      //           height: 150,
-      //         ),
-      //         TextFormField(
-      //           decoration: InputDecoration(
-      //             border: OutlineInputBorder(),
-      //             hintText: "User id"
-      //           ),
-      //         ),
-      //         SizedBox(
-      //           height: 20,
-      //         ),
-      //         TextFormField(
-      //           decoration: InputDecoration(
-      //             border: OutlineInputBorder(),
-      //             hintText: "Password",
-                  
-      //           ),
-      //         ),
-      //         SizedBox(
-      //           height: 20,
-      //         ),
-      //         ElevatedButton(onPressed: (){
-      //           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>hometab()));
-      //         }, 
-      //         child: Text("Login")),
-      //       ],
-      //     ),
-      //   ),
-      //   ),
-      // ),
     );
   }
+  void checklogin(BuildContext ctx)async{
+    final _username = _userController;
+    final _password = _passwordController;
+    if(_username == "adnan" && _password == "123"){
+      final std = await SharedPreferences.getInstance();
+    }
+  }
+  
 }

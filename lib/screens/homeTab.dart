@@ -17,39 +17,44 @@ class _hometabState extends State<hometab> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: "Search"
-              ),
-            ),
-            Text("Current Balance"),
-            Text("9974",style: TextStyle(fontSize: 30),),
-            ListView.builder(itemBuilder: (context, index) {
-              Card(
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        Text("Salary"),
-                        Text("Get the salary"),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text("50000"),
-                        Text("05-01-2023"),
-                      ],
-                    )
-                  ],
+        child: Container(
+          child: Column(
+            children: [
+              SizedBox(height: 10,),
+              TextFormField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+                  labelText: "Search Here....",
                 ),
-              );
-            },
-            itemCount: 10,
-            )
-          ],
+              ),
+              SizedBox(height: 10,),
+              Text("Your Current Balance"),
+              Text("49236",style: TextStyle(fontSize: 25),),
+
+              ListView.builder(itemBuilder: (context, index){
+                Container(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text("Salary"),
+                          Text("50000")
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text("Get the salary"),
+                          Text("01-05-2023"),
+                        ],
+                      )
+                    ],
+                  ),
+                );
+              },
+              itemCount: 50,
+              )
+            ],
+          ),
         ),
       ),
       );
