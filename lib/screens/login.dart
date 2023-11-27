@@ -19,6 +19,7 @@ final _formKey = GlobalKey<FormState>();
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+    double width=MediaQuery.of(context).size.width;
     double height=MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
@@ -40,15 +41,12 @@ class _LoginState extends State<Login> {
                 ),
                 child: Image.asset('assets/logo 2.png'),
               ),
-           decoration: BoxDecoration(
-            // color: Colors.red
-           ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               height: height*0.6,
-              width: double.infinity,
+              width: width * 1,
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 167, 185, 199),
                 borderRadius: BorderRadius.only(
@@ -128,7 +126,13 @@ class _LoginState extends State<Login> {
                             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home()
                             ));
                           }, 
-                        child: Text('login',style: TextStyle(color: Colors.black),))
+                        child: Padding(
+                          padding:  EdgeInsets.symmetric(
+                            vertical: width*0.03,
+                            horizontal: height*0.03
+                          ),
+                          child: Text('login',style: TextStyle(color: Colors.black),),
+                        ))
                       ],
                     ),
                   ),

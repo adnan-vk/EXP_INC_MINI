@@ -12,7 +12,9 @@ class _chartState extends State<chart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("chart"),
+        centerTitle: true,
+        title: Text("CHART"),
+        backgroundColor: Colors.blueGrey,
       ),
     );
   }
