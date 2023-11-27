@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
 
-class splash extends StatefulWidget {
-  const splash({super.key});
+class Splash extends StatefulWidget {
+  const Splash({super.key});
 
   @override
-  State<splash> createState() => _splashState();
+  State<Splash> createState() => _SplashState();
 }
 
-class _splashState extends State<splash> {
+class _SplashState extends State<Splash> {
 
   @override
   void initState() {
@@ -32,12 +32,12 @@ class _splashState extends State<splash> {
       ),
     );
 
-    dispose(){     
-      super.dispose();
-    }
+    // dispose(){     
+    //   super.dispose();
+    // }
   }
   Future <void> gotoLogin()async{
     await Future.delayed(Duration(seconds: 3));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>login()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Login()));
   }
 }

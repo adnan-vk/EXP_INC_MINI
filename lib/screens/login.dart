@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mini/screens/homeTab.dart';
+import 'package:mini/screens/home.dart';
+// import 'package:mini/screens/home.dart';
+import 'package:mini/screens/hometab.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class login extends StatefulWidget {
-  const login({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<login> createState() => _loginState();
+  State<Login> createState() => _LoginState();
 }
 final _userController = TextEditingController();
 final _passwordController = TextEditingController();
@@ -14,7 +16,7 @@ bool _dataMatched = true;
 
 final _formKey = GlobalKey<FormState>();
 
-class _loginState extends State<login> {
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     double height=MediaQuery.of(context).size.height;
@@ -123,7 +125,7 @@ class _loginState extends State<login> {
                             backgroundColor: MaterialStatePropertyAll(Colors.white),
                           ),
                           onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) =>hometab()
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home()
                             ));
                           }, 
                         child: Text('login',style: TextStyle(color: Colors.black),))

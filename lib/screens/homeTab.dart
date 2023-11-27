@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:mini/screens/add.dart';
 
-class hometab extends StatefulWidget {
-  const hometab({super.key});
+class HomeTab extends StatefulWidget {
+  const HomeTab({super.key});
 
   @override
-  State<hometab> createState() => _hometabState();
+  State<HomeTab> createState() => _HomeTabState();
 }
 
-class _hometabState extends State<hometab> {
+class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         centerTitle: true,
         title: Text("TRANSACTIONS"),
       ),
@@ -19,7 +21,9 @@ class _hometabState extends State<hometab> {
         children: [
           Container(
         color: Colors.grey,
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.only(
+          left: 10,right: 10,
+        ),
         child: Column(
           children: [
             SizedBox(height: 10,),
@@ -36,28 +40,39 @@ class _hometabState extends State<hometab> {
               ),
             ),
             SizedBox(height: 10,),
-            Text("Your Current Balance"),
-            Text("49236",style: TextStyle(fontSize: 25),),
+            Text("Your Current Balance:",style: TextStyle(fontWeight: FontWeight.w500),),
+            Text("49236",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Color.fromARGB(255, 1, 66, 120)),),
             Expanded(
               child: ListView.builder(itemBuilder: (context, index){
                return Card(
-                  child: Padding(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                  child: 
+                  Padding(
                     padding: const EdgeInsets.all(10),
-                    child: Column(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        Column(
                           children: [
-                            Text("Salary"),
-                            Text("50000")
+                            Text("Salary",style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
+                            SizedBox(height: 10,),
+                            Text("01-05-2023",style: TextStyle(fontWeight: FontWeight.w500),),
+                            Text("Get the salary",style: TextStyle(fontWeight: FontWeight.w100),),
+                            
                           ],
                         ),
-                        SizedBox(height: 40,),
-                        Row(
+                        Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Get the salary"),
-                            Text("01-05-2023"),
+                            Text("50000",style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25),),
+                            // Checkbox(value: null, onChanged: null),
+                            IconButton(onPressed: (){}, 
+                            icon: Icon(Icons.edit,size: 20,))
+
+                            
                           ],
                         )
                       ],
@@ -71,14 +86,6 @@ class _hometabState extends State<hometab> {
           ],
         ),
       ),
-              Positioned(
-                bottom: 15,
-                right: 15,
-                child: FloatingActionButton.extended(
-                  icon: Icon(Icons.add),
-                  onPressed: (){}, 
-                label: Text("Add Transaction")),
-              ),
             
     ],
   )
