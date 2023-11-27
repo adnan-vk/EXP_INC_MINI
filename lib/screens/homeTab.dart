@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini/screens/add.dart';
+import 'package:mini/screens/details.dart';
+import 'package:mini/screens/edit.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -44,41 +46,48 @@ class _HomeTabState extends State<HomeTab> {
             Text("49236",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Color.fromARGB(255, 1, 66, 120)),),
             Expanded(
               child: ListView.builder(itemBuilder: (context, index){
-               return Card(
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                  child: 
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Text("Salary",style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
-                            SizedBox(height: 10,),
-                            Text("01-05-2023",style: TextStyle(fontWeight: FontWeight.w500),),
-                            Text("Get the salary",style: TextStyle(fontWeight: FontWeight.w100),),
-                            
-                          ],
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("50000",style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25),),
-                            // Checkbox(value: null, onChanged: null),
-                            IconButton(onPressed: (){}, 
-                            icon: Icon(Icons.edit,size: 20,))
-
-                            
-                          ],
-                        )
-                      ],
+               return GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>details()));
+                },
+                 child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                    child: 
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Text("Salary",style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
+                              SizedBox(height: 10,),
+                              Text("01-05-2023",style: TextStyle(fontWeight: FontWeight.w500),),
+                              Text("Get the salary",style: TextStyle(fontWeight: FontWeight.w100),),
+                              
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("50000",style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25),),
+                              // Checkbox(value: null, onChanged: null),
+                              IconButton(onPressed: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>edit()));
+                              }, 
+                              icon: Icon(Icons.edit,size: 20,))
+               
+                              
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                );
+               );
               },
               itemCount: 50,
               ),
