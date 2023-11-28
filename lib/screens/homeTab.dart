@@ -10,6 +10,7 @@ class HomeTab extends StatefulWidget {
   State<HomeTab> createState() => _HomeTabState();
 }
 
+bool? ischecked = false;
 class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
@@ -18,6 +19,11 @@ class _HomeTabState extends State<HomeTab> {
         backgroundColor: Colors.blueGrey,
         centerTitle: true,
         title: Text("TRANSACTIONS"),
+        actions: [
+          IconButton(onPressed: (){
+            
+          }, icon: Icon(Icons.delete_outline)),
+        ],
       ),
       body: Stack(
         children: [
@@ -74,14 +80,21 @@ class _HomeTabState extends State<HomeTab> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("50000",style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25),),
-                              // Checkbox(value: null, onChanged: null),
-                              IconButton(onPressed: (){
+                              Row(
+                                children: [
+                                   Checkbox(value: ischecked, 
+                              onChanged: (newbool){
+                                setState(() {
+                                  ischecked = newbool;
+                                });
+                              }),
+                                  IconButton(onPressed: (){
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>edit()));
                               }, 
-                              icon: Icon(Icons.edit,size: 20,))
-               
-                              
-                            ],
+                              icon: Icon(Icons.edit,size: 20,)),
+                                ],
+                              )
+                                                          ],
                           )
                         ],
                       ),

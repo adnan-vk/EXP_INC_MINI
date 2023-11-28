@@ -3,6 +3,7 @@ import 'package:mini/screens/add.dart';
 import 'package:mini/screens/chart.dart';
 import 'package:mini/screens/homeTab.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:mini/screens/settings.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -15,7 +16,8 @@ int currentindex = 0;
 final List _tabs = [
   HomeTab(),
   Add(),
-  chart()
+  chart(),
+  Settings(),
 ];
 
 class _HomeState extends State<Home> {
@@ -45,7 +47,8 @@ class _HomeState extends State<Home> {
             tabs: [
             GButton(icon: Icons.home_outlined,text: "Home",),
             GButton(icon: Icons.add,text: "Add",),
-            GButton(icon: Icons.insert_chart,text: "Chart",),
+            GButton(icon: Icons.insert_chart_outlined,text: "Chart",),
+            GButton(icon: Icons.settings_outlined,text: "Settings",),
           ],),
         ),
       )

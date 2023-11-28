@@ -78,7 +78,7 @@ class _LoginState extends State<Login> {
                               borderRadius: BorderRadius.circular(30)
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
+                                // borderSide: BorderSide(color: Colors.red),
                                 borderRadius: BorderRadius.circular(30),
                               ),
                               labelText: "User id",labelStyle: TextStyle(color: Colors.white)
@@ -95,6 +95,7 @@ class _LoginState extends State<Login> {
                             height: 20,
                           ),
                           TextFormField(
+                            style: TextStyle(color: Colors.white),
                             controller: _passwordController,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
