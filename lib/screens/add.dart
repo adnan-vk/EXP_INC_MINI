@@ -7,6 +7,7 @@ class Add extends StatefulWidget {
   @override
   State<Add> createState() => _AddState();
 }
+String dropdownvalue = "INCOME";
 
 class _AddState extends State<Add> {
   @override
@@ -53,13 +54,28 @@ class _AddState extends State<Add> {
                         ),
                       ),
                       SizedBox(height: 10,),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
-                          ),
-                          labelText: "CATEGORY"
+                      DropdownButton <String>(
+                        isExpanded: true,
+                        underline: Container(
+                          height: 2,
+                          color: Colors.grey,
                         ),
+                        value: dropdownvalue,
+                        onChanged: (String? newvalue) {
+                          setState(() {
+                            dropdownvalue = newvalue!;
+                          });
+                        },
+                        items: const [
+                          DropdownMenuItem(
+                            value: "INCOME",
+                            child:Text("INCOME",style: TextStyle(
+                              color: Colors.green
+                            ),)),
+                          DropdownMenuItem(
+                            value: "EXPENCE",
+                            child:Text("EXPENCE",style: TextStyle(color: Colors.red),)),
+                        ],
                       ),
                       SizedBox(height: 10,),
                       TextFormField(
@@ -74,6 +90,7 @@ class _AddState extends State<Add> {
                       ),
                       SizedBox(height: 10,),
                       TextFormField(
+                        keyboardType: TextInputType.datetime,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20)

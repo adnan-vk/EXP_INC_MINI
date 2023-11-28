@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini/screens/splash.dart';
+const savekeyname = "user login";
 void main(List<String> args) {
   runApp(MyApp());
 }
