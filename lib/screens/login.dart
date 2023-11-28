@@ -151,7 +151,7 @@ class _LoginState extends State<Login> {
     if(_username == "adnan" && _password == "123"){
       final std = await SharedPreferences.getInstance();
       await std.setBool(savekeyname, true);
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
     }else{
       setState(() {
         _dataMatched = false;

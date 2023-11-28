@@ -16,6 +16,13 @@ class _chartState extends State<chart> {
         title: Text("CHART"),
         backgroundColor: Colors.blueGrey,
       ),
+      body: Container(
+        child: Column(
+          children: [
+            // chart()
+          ],
+        ),
+      ),
     );
   }
 }
