@@ -22,7 +22,7 @@ class _HomeTabState extends State<HomeTab> {
         actions: [
           IconButton(onPressed: (){
             
-          }, icon: Icon(Icons.delete_outline)),
+          }, icon: Icon(Icons.delete_outlined,color: Colors.red,)),
         ],
       ),
       body: Stack(
@@ -83,6 +83,7 @@ class _HomeTabState extends State<HomeTab> {
                               Row(
                                 children: [
                                    Checkbox(value: ischecked, 
+                                  activeColor: Colors.red,
                               onChanged: (newbool){
                                 setState(() {
                                   ischecked = newbool;
