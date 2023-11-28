@@ -21,7 +21,6 @@ class _HomeTabState extends State<HomeTab> {
         title: Text("TRANSACTIONS"),
         actions: [
           IconButton(onPressed: (){
-            
           }, icon: Icon(Icons.delete_outlined,color: Colors.red,)),
         ],
       ),

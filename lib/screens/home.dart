@@ -23,7 +23,7 @@ final List _tabs = [
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.width;
+    double size = MediaQuery.of(context).size.width; 
     return Scaffold(
       body: _tabs [currentindex],
       bottomNavigationBar: 

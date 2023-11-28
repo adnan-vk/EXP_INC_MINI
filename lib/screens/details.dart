@@ -32,7 +32,11 @@ class _detailsState extends State<details> {
                   bottom: 50,
                   left: 25,right: 25
                 ),
-                color: Colors.white,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white,
+                ),
+                
                 child: Column(
                   children: [
                     Row(
