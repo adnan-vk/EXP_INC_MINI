@@ -13,7 +13,7 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color.fromARGB(255, 3, 45, 79),
         centerTitle: true,
         title: const Text("SETTINGS"),
       ),

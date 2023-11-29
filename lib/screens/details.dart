@@ -14,7 +14,7 @@ class _DetailsState extends State<Details> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("DETAILS"),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color.fromARGB(255, 3, 45, 79),
       ),
       body: Container(
         color: Colors.grey,

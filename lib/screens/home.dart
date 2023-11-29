@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: 
       Container(
         width: size*1,
-        color:  const Color.fromARGB(255, 95, 91, 91),
+        color:  const Color.fromARGB(255, 3, 45, 79),
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: GNav(
@@ -38,10 +38,10 @@ class _HomeState extends State<Home> {
                 currentindex = index;
               });
             },
-            backgroundColor: const Color.fromARGB(255, 95, 91, 91),
+            backgroundColor:  Color.fromARGB(255, 3, 45, 79),
             color: Colors.white,
-            activeColor: Colors.white,
-            tabBackgroundColor: Colors.blueGrey,
+            activeColor: Colors.black,
+            tabBackgroundColor: Colors.yellow,
             padding: const EdgeInsets.all(13),
             gap: 10,
             tabs: const [

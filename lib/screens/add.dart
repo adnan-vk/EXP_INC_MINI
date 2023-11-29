@@ -18,7 +18,7 @@ class _AddState extends State<Add> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: const Color.fromARGB(255, 3, 45, 79),
         centerTitle: true,
         title: const Text("ADD TRANSACTION"),
       ),
@@ -116,14 +116,14 @@ class _AddState extends State<Add> {
                       ),
                        const SizedBox(height: 10,),
                       ElevatedButton(
-                        style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 1, 66, 120))),
+                        style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.yellow)),
                         onPressed: (){}, 
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
                           vertical: width*0.03,
                             horizontal: height*0.03
                         ),
-                        child: const Text("SAVE"),
+                        child: const Text("SAVE",style: TextStyle(color: Colors.black),),
                       ))
                     ],
                   ),
