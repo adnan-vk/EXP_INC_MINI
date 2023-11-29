@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 class Add extends StatefulWidget {
   const Add({super.key});
@@ -7,6 +8,7 @@ class Add extends StatefulWidget {
   @override
   State<Add> createState() => _AddState();
 }
+TextEditingController _date = TextEditingController();
 String dropdownvalue = "INCOME";
 
 class _AddState extends State<Add> {
@@ -90,13 +92,27 @@ class _AddState extends State<Add> {
                       ),
                       SizedBox(height: 10,),
                       TextFormField(
+                        controller: _date,
                         keyboardType: TextInputType.datetime,
                         decoration: InputDecoration(
+                          
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20)
                           ),
-                          labelText: "DATE"
+                          labelText: "DATE",
+                          suffixIcon: Icon(Icons.calendar_today),
                         ),
+                        onTap: () async{
+                          DateTime? pickdate =await showDatePicker(
+                            context: context, 
+                            initialDate: DateTime.now(), 
+                            firstDate: DateTime(2000), lastDate: DateTime(2100));
+                            if(pickdate != null){
+                              setState(() {
+                                _date.text = DateFormat('dd-MM-yyyy').format(pickdate);
+                              });
+                            }
+                        },
                       ),
                        SizedBox(height: 10,),
                       ElevatedButton(

@@ -16,7 +16,7 @@ class _HomeTabState extends State<HomeTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color.fromARGB(255, 1, 56, 86),
         centerTitle: true,
         title: Text("TRANSACTIONS"),
         actions: [
