@@ -24,13 +24,13 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         centerTitle: true,
-        title: Text("Login Page"),
+        title: const Text("Login Page"),
       ),
       body: Form(
         key: _formKey,
         child: Stack(
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
               height: height*0.4,
                 child: Padding(
@@ -47,7 +47,7 @@ class _LoginState extends State<Login> {
               child: Container(
                 height: height*0.6,
                 width: width * 1,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 167, 185, 199),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
@@ -64,21 +64,21 @@ class _LoginState extends State<Login> {
                       padding: const EdgeInsets.only(left: 15,right: 15),
                       child: Column(
                         children: [
-                          Text('LOGIN',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,
-                          color: const Color.fromARGB(255, 14, 51, 82))),
-                          SizedBox(height: 30,),
+                          const Text('LOGIN',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,
+                          color: Color.fromARGB(255, 14, 51, 82))),
+                          const SizedBox(height: 30,),
                           TextFormField(
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                             controller: _userController,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
+                                borderSide: const BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(30)
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
                               ),
-                              labelText: "User id",labelStyle: TextStyle(color: Colors.white)
+                              labelText: "User id",labelStyle: const TextStyle(color: Colors.white)
                             ),
                             validator: (value) {
                             if(value == null || value.isEmpty){
@@ -88,15 +88,15 @@ class _LoginState extends State<Login> {
                             }
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           TextFormField(
-                            style: TextStyle(color: Colors.white),
+                            style: const TextStyle(color: Colors.white),
                             controller: _passwordController,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.white,
                                 ),
                                 borderRadius: BorderRadius.circular(30)
@@ -104,7 +104,7 @@ class _LoginState extends State<Login> {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30)
                               ),
-                              labelText: "Password",labelStyle: TextStyle(color: Colors.white),
+                              labelText: "Password",labelStyle: const TextStyle(color: Colors.white),
                             ),
                             validator: (value) {
                             if(value == null || value.isEmpty){
@@ -114,9 +114,9 @@ class _LoginState extends State<Login> {
                             }
                             },
                           ),
-                          SizedBox(height: 20,),
+                          const SizedBox(height: 20,),
                           ElevatedButton(
-                            style: ButtonStyle(
+                            style: const ButtonStyle(
                               backgroundColor: MaterialStatePropertyAll(Colors.white),
                             ),
                             onPressed: (){
@@ -129,7 +129,7 @@ class _LoginState extends State<Login> {
                               vertical: width*0.03,
                               horizontal: height*0.03
                             ),
-                            child: Text('login',style: TextStyle(color: Colors.black),),
+                            child: const Text('login',style: TextStyle(color: Colors.black),),
                           ))
                         ],
                       ),
@@ -149,7 +149,7 @@ class _LoginState extends State<Login> {
     if(_username == "adnan" && _password == "123"){
       final std = await SharedPreferences.getInstance();
       await std.setBool(savekeyname, true);
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Home()));
     }else{
       setState(() {
         _dataMatched = false;

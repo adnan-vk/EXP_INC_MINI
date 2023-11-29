@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class details extends StatefulWidget {
-  const details({super.key});
+class Details extends StatefulWidget {
+  const Details({super.key});
 
   @override
-  State<details> createState() => _detailsState();
+  State<Details> createState() => _DetailsState();
 }
 
-class _detailsState extends State<details> {
+class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("DETAILS"),
+        title: const Text("DETAILS"),
         backgroundColor: Colors.blueGrey,
       ),
       body: Container(
@@ -27,7 +27,7 @@ class _detailsState extends State<details> {
                 top: 50
               ),
               child: Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 50,
                   bottom: 50,
                   left: 25,right: 25
@@ -37,7 +37,7 @@ class _detailsState extends State<details> {
                   color: Colors.white,
                 ),
                 
-                child: Column(
+                child: const Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

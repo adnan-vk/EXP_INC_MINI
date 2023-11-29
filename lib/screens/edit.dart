@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class edit extends StatefulWidget {
-  const edit({super.key});
+class Edit extends StatefulWidget {
+  const Edit({super.key});
 
   @override
-  State<edit> createState() => _editState();
+  State<Edit> createState() => _EditState();
 }
 
-class _editState extends State<edit> {
+class _EditState extends State<Edit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         centerTitle: true,
-        title: Text("EDIT SCREEN"),
+        title: const Text("EDIT SCREEN"),
       ),
     );
   }

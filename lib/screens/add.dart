@@ -20,7 +20,7 @@ class _AddState extends State<Add> {
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         centerTitle: true,
-        title: Text("ADD TRANSACTION"),
+        title: const Text("ADD TRANSACTION"),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -44,7 +44,7 @@ class _AddState extends State<Add> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30)
                   ),
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: Column(
                     children: [
                       TextFormField(
@@ -55,7 +55,7 @@ class _AddState extends State<Add> {
                           labelText: "DISCRIPTION"
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       DropdownButton <String>(
                         isExpanded: true,
                         underline: Container(
@@ -79,7 +79,7 @@ class _AddState extends State<Add> {
                             child:Text("EXPENCE",style: TextStyle(color: Colors.red),)),
                         ],
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       TextFormField(
                         keyboardType: TextInputType.number,
                         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -90,7 +90,7 @@ class _AddState extends State<Add> {
                           labelText: "ENTER THE AMOUNT",
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      const SizedBox(height: 10,),
                       TextFormField(
                         controller: _date,
                         keyboardType: TextInputType.datetime,
@@ -100,13 +100,13 @@ class _AddState extends State<Add> {
                             borderRadius: BorderRadius.circular(20)
                           ),
                           labelText: "DATE",
-                          suffixIcon: Icon(Icons.calendar_today),
+                          suffixIcon: const Icon(Icons.calendar_today),
                         ),
                         onTap: () async{
                           DateTime? pickdate =await showDatePicker(
                             context: context, 
                             initialDate: DateTime.now(), 
-                                             firstDate: DateTime(2000), lastDate: DateTime(2100));
+                            firstDate: DateTime(2000), lastDate: DateTime(2100));
                             if(pickdate != null){
                               setState(() {
                                 _date.text = DateFormat('dd-MM-yyyy').format(pickdate);
@@ -114,16 +114,16 @@ class _AddState extends State<Add> {
                             }
                         },
                       ),
-                       SizedBox(height: 10,),
+                       const SizedBox(height: 10,),
                       ElevatedButton(
-                        style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 1, 66, 120))),
+                        style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 1, 66, 120))),
                         onPressed: (){}, 
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
                           vertical: width*0.03,
                             horizontal: height*0.03
                         ),
-                        child: Text("SAVE"),
+                        child: const Text("SAVE"),
                       ))
                     ],
                   ),

@@ -14,10 +14,10 @@ class Home extends StatefulWidget {
 int currentindex = 0;
 
 final List _tabs = [
-  HomeTab(),
-  Add(),
-  mychart(),
-  Settings(),
+  const HomeTab(),
+  const Add(),
+  const MyChart(),
+  const Settings(),
 ];
 
 class _HomeState extends State<Home> {
@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: 
       Container(
         width: size*1,
-        color:  Color.fromARGB(255, 95, 91, 91),
+        color:  const Color.fromARGB(255, 95, 91, 91),
         child: Padding(
           padding: const EdgeInsets.all(15),
           child: GNav(
@@ -42,9 +42,9 @@ class _HomeState extends State<Home> {
             color: Colors.white,
             activeColor: Colors.white,
             tabBackgroundColor: Colors.blueGrey,
-            padding: EdgeInsets.all(13),
+            padding: const EdgeInsets.all(13),
             gap: 10,
-            tabs: [
+            tabs: const [
             GButton(icon: Icons.home_outlined,text: "Home",),
             GButton(icon: Icons.add,text: "Add",),
             GButton(icon: Icons.insert_chart_outlined,text: "Chart",),
