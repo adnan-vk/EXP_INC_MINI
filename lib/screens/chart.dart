@@ -18,9 +18,9 @@ class MyChart extends StatelessWidget {
         child: PieChart( swapAnimationDuration: const Duration(seconds: 0),swapAnimationCurve: Curves.bounceIn,
                     PieChartData(
                       sections:[
-                      PieChartSectionData(value: 200,title: "FOOD",color: const Color.fromARGB(255, 92, 172, 162)),
-                      PieChartSectionData(value: 350,title: "RECHARGE",color: const Color.fromARGB(255, 151, 163, 169)),
-                      PieChartSectionData(value: 150,title: "hello",color: const Color.fromARGB(255, 55, 145, 139)),
+                      PieChartSectionData(value: 200,title: "FOOD",color: Color.fromARGB(255, 184, 67, 20)),
+                      PieChartSectionData(value: 350,title: "RECHARGE",color: Color.fromARGB(255, 243, 236, 184)),
+                      PieChartSectionData(value: 150,title: "hello",color: Color.fromARGB(255, 148, 207, 150)),
            
                       ]),
                     ),
