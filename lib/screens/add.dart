@@ -106,7 +106,7 @@ class _AddState extends State<Add> {
                           DateTime? pickdate =await showDatePicker(
                             context: context, 
                             initialDate: DateTime.now(), 
-                            firstDate: DateTime(2000), lastDate: DateTime(2100));
+                                             firstDate: DateTime(2000), lastDate: DateTime(2100));
                             if(pickdate != null){
                               setState(() {
                                 _date.text = DateFormat('dd-MM-yyyy').format(pickdate);

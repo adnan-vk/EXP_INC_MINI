@@ -15,7 +15,7 @@ class _SettingsState extends State<Settings> {
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         centerTitle: true,
-        title: Text("SETTINGS"),
+        title: const Text("SETTINGS"),
       ),
       body: Container(
         color: Colors.grey,
@@ -28,8 +28,8 @@ class _SettingsState extends State<Settings> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(30)
                 ),
-                padding: EdgeInsets.all(20),
-                child: Row(
+                padding: const EdgeInsets.all(20),
+                child: const Row(
                   children: [
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/img.jpg'),
@@ -40,7 +40,7 @@ class _SettingsState extends State<Settings> {
                 ),
               ),
             ),
-            SizedBox(height: 100,),
+            const SizedBox(height: 100,),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Container(
@@ -50,14 +50,14 @@ class _SettingsState extends State<Settings> {
                   borderRadius: BorderRadius.circular(30)
                 ),
                 
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 child: Column(
                   children: [
                     GestureDetector(
-                      child: Card(
+                      child: const Card(
                         color: Color.fromARGB(255, 95, 91, 91),
                         child: Padding(
-                          padding: const EdgeInsets.all(15),
+                          padding: EdgeInsets.all(15),
                           child: Row(
                             children: [
                               Icon(Icons.info_outline,color: Colors.white,),
@@ -69,10 +69,10 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                     GestureDetector(
-                      child: Card(
+                      child: const Card(
                         color: Color.fromARGB(255, 95, 91, 91),
                         child: Padding(
-                          padding: const EdgeInsets.all(15),
+                          padding: EdgeInsets.all(15),
                           child: Row(
                             children: [
                               Icon(Icons.privacy_tip_outlined,color: Colors.white,),
@@ -85,12 +85,12 @@ class _SettingsState extends State<Settings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Login()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Login()));
                       },
-                      child: Card(
+                      child: const Card(
                         color: Color.fromARGB(255, 95, 91, 91),
                         child: Padding(
-                          padding: const EdgeInsets.all(15),
+                          padding: EdgeInsets.all(15),
                           child: Row(
                             children: [
                               Icon(Icons.logout_outlined,color: Colors.white,),
@@ -104,7 +104,7 @@ class _SettingsState extends State<Settings> {
                   ],
                 ),
               ),
-            ),SizedBox(height: 10,),
+            ),const SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.all(15),
               child: Image.asset("assets/logo 2.png",width: 150,),

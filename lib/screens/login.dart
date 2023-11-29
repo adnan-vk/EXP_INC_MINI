@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini/main.dart';
 import 'package:mini/screens/home.dart';
-// import 'package:mini/screens/home.dart';
-import 'package:mini/screens/hometab.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {

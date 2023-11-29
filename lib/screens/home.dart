@@ -16,7 +16,7 @@ int currentindex = 0;
 final List _tabs = [
   HomeTab(),
   Add(),
-  chart(),
+  mychart(),
   Settings(),
 ];
 

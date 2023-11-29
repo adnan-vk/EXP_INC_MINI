@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mini/screens/add.dart';
 import 'package:mini/screens/details.dart';
 import 'package:mini/screens/edit.dart';
 
