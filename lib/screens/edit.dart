@@ -117,14 +117,17 @@ class _EditState extends State<Edit> {
                       ),
                        const SizedBox(height: 10,),
                       ElevatedButton(
-                        style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.yellow)),
+                        style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.yellow),
+                        side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
+                        
+                        ),
                         onPressed: (){}, 
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
                           vertical: width*0.03,
                             horizontal: height*0.03
                         ),
-                        child: const Text("UPDATE",style: TextStyle(color: Colors.black),),
+                        child: const Text("UPDATE",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),),
                       ))
                     ],
                   ),
