@@ -9,8 +9,8 @@ class MyChart extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("CHART"),
-        backgroundColor: Color.fromARGB(255, 3, 45, 79),
+        title: const Text("CHART"),
+        backgroundColor: const Color.fromARGB(255, 3, 45, 79),
       ),
       body:
       Padding(

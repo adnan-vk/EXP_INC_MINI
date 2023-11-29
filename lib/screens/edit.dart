@@ -18,14 +18,14 @@ class _EditState extends State<Edit> {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 3, 45, 79),
+        backgroundColor: const Color.fromARGB(255, 3, 45, 79),
         centerTitle: true,
         title: const Text("EDIT SCREEN"),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          padding: EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(top: 50),
           height: height * 1.1,
           color: Colors.grey,
           child: Column(

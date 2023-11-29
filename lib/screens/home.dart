@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                 currentindex = index;
               });
             },
-            backgroundColor:  Color.fromARGB(255, 3, 45, 79),
+            backgroundColor:  const Color.fromARGB(255, 3, 45, 79),
             color: Colors.white,
             activeColor: Colors.black,
             tabBackgroundColor: Colors.yellow,

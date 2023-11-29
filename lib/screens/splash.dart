@@ -31,10 +31,6 @@ class _SplashState extends State<Splash> {
         ),
       ),
     );
-
-    // dispose(){     
-    //   super.dispose();
-    // }
   }
   Future <void> gotoLogin()async{
     await Future.delayed(Duration(seconds: 3));

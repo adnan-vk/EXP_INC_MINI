@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
     double height=MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 3, 45, 79),
+        backgroundColor: const Color.fromARGB(255, 3, 45, 79),
         centerTitle: true,
         title: const Text("Login Page"),
       ),
