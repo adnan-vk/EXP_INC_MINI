@@ -48,7 +48,7 @@ class _LoginState extends State<Login> {
                 height: height*0.6,
                 width: width * 1,
                 decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 167, 185, 199),
+                  color: Color.fromARGB(255, 3, 45, 79),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
                     topRight: Radius.circular(40),
@@ -65,7 +65,7 @@ class _LoginState extends State<Login> {
                       child: Column(
                         children: [
                           const Text('LOGIN',style: TextStyle(fontSize: 40,fontWeight: FontWeight.w700,
-                          color: Color.fromARGB(255, 14, 51, 82))),
+                          color: Colors.yellow)),
                           const SizedBox(height: 30,),
                           TextFormField(
                             style: const TextStyle(color: Colors.white),
@@ -77,6 +77,7 @@ class _LoginState extends State<Login> {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
+                                borderSide: const BorderSide(color: Colors.white)
                               ),
                               labelText: "User id",labelStyle: const TextStyle(color: Colors.white)
                             ),
@@ -102,7 +103,8 @@ class _LoginState extends State<Login> {
                                 borderRadius: BorderRadius.circular(30)
                               ),
                               focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30)
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: const BorderSide(color: Colors.white)
                               ),
                               labelText: "Password",labelStyle: const TextStyle(color: Colors.white),
                             ),
@@ -118,6 +120,7 @@ class _LoginState extends State<Login> {
                           ElevatedButton(
                             style: const ButtonStyle(
                               backgroundColor: MaterialStatePropertyAll(Colors.white),
+                              side: MaterialStatePropertyAll(BorderSide(width: 5,color: Colors.yellow))
                             ),
                             onPressed: (){
                               if(_formKey.currentState!.validate()){
@@ -126,10 +129,10 @@ class _LoginState extends State<Login> {
                             }, 
                           child: Padding(
                             padding:  EdgeInsets.symmetric(
-                              vertical: width*0.03,
+                              vertical: width*0.05,
                               horizontal: height*0.03
                             ),
-                            child: const Text('login',style: TextStyle(color: Colors.black),),
+                            child: const Text('LOGIN',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),),
                           ))
                         ],
                       ),
