@@ -25,7 +25,6 @@ class _EditState extends State<Edit> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          padding: const EdgeInsets.only(top: 50),
           height: height * 1.1,
           color: Colors.grey,
           child: Column(
@@ -33,7 +32,7 @@ class _EditState extends State<Edit> {
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: 
-                Image.asset('assets/logo 2.png',width: width*0.6,height: height*0.15,),
+                Image.asset('assets/logo 2.png',width: width*0.5,height: height*0.11,),
               ),
               Padding(
                 padding: const EdgeInsets.only(
@@ -93,12 +92,13 @@ class _EditState extends State<Edit> {
                       ),
                       const SizedBox(height: 10,),
                       TextFormField(
+                        readOnly: true,
                         controller: _date,
                         keyboardType: TextInputType.datetime,
                         decoration: InputDecoration(
                           
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20)
                           ),
                           labelText: "DATE",
                           suffixIcon: const Icon(Icons.calendar_today),
@@ -117,17 +117,17 @@ class _EditState extends State<Edit> {
                       ),
                        const SizedBox(height: 10,),
                       ElevatedButton(
-                        style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.yellow),
-                        side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
-                        
-                        ),
+                        style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(Colors.yellow),
+                          side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
+                          ),
                         onPressed: (){}, 
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
                           vertical: width*0.03,
                             horizontal: height*0.03
                         ),
-                        child: const Text("UPDATE",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900 ),),
+                        child: const Text("UPDATE",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),),
                       ))
                     ],
                   ),
