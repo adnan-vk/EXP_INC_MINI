@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:mini/db/model/model.dart';
 import 'package:mini/screens/splash.dart';
 const savekeyname = "user login";
-void main(List<String> args) {
+Future<void> main(List<String> args)async {
+  await Hive.initFlutter();
+  if(!Hive.isAdapterRegistered(transactionmodelAdapter().typeId)){
+    Hive.registerAdapter(transactionmodelAdapter());
+  }
   runApp(const MyApp());
 }
 

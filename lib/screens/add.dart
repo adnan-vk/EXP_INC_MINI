@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:mini/db/function/function.dart';
+import 'package:mini/db/model/model.dart';
+import 'package:mini/screens/hometab.dart';
 
 class Add extends StatefulWidget {
   const Add({super.key});
@@ -8,8 +11,12 @@ class Add extends StatefulWidget {
   @override
   State<Add> createState() => _AddState();
 }
-TextEditingController _date = TextEditingController();
-String dropdownvalue = "INCOME";
+final _date = TextEditingController();
+final _decr = TextEditingController();
+final _type = TextEditingController();
+final _amt = TextEditingController();
+
+String dropdownvalue = "Select type";
 
 class _AddState extends State<Add> {
   @override
@@ -48,6 +55,7 @@ class _AddState extends State<Add> {
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: _decr,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20)
@@ -67,10 +75,17 @@ class _AddState extends State<Add> {
                         value: dropdownvalue,
                         onChanged: (String? newvalue) {
                           setState(() {
-                            dropdownvalue = newvalue!;
+                            dropdownvalue = newvalue.toString();
+                            _type.text = dropdownvalue;
                           });
                         },
                         items: const [
+
+                          DropdownMenuItem(
+                            value: "Select type",
+                            child:Text("Select type",style: TextStyle(
+                              // color: Colors.green
+                            ),)),
                           DropdownMenuItem(
                             value: "INCOME",
                             child:Text("INCOME",style: TextStyle(
@@ -83,6 +98,7 @@ class _AddState extends State<Add> {
                       ),
                       const SizedBox(height: 10,),
                       TextFormField(
+                        controller: _amt,
                         keyboardType: TextInputType.number,
                         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                         decoration: InputDecoration(
@@ -123,7 +139,9 @@ class _AddState extends State<Add> {
                           backgroundColor: MaterialStatePropertyAll(Colors.yellow),
                           side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
                           ),
-                        onPressed: (){}, 
+                        onPressed: (){
+                          onSaveButtonClicked();
+                        }, 
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
                           vertical: width*0.03,
@@ -140,5 +158,18 @@ class _AddState extends State<Add> {
         ),
       ),
     );
+  }
+
+  void onSaveButtonClicked()async {
+    final _descr = _decr.text.trim();
+    final _amout = _amt.text.trim();
+    final _typ = _type.text.trim();
+    final _dte = _date.text.trim();
+    if(_descr.isEmpty || _amout.isEmpty || _typ.isEmpty || _dte.isEmpty){
+      return;
+    }
+    final _transa = transactionmodel(discription: _descr, type: _typ, amount: _amout, date: _dte);
+    addTransaction(_transa);
+    HomeTab();
   }
 }
