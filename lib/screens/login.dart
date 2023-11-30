@@ -125,6 +125,8 @@ class _LoginState extends State<Login> {
                             onPressed: (){
                               if(_formKey.currentState!.validate()){
                                 checklogin(context);
+                              }else{
+                                print("data is empty");
                               }
                             }, 
                           child: Padding(
@@ -146,18 +148,21 @@ class _LoginState extends State<Login> {
       )
     );
   }
-  void checklogin(BuildContext ctx)async{
-    final _username = _userController.text;
-    final _password = _passwordController.text;
-    if(_username == "adnan" && _password == "123"){
-      final std = await SharedPreferences.getInstance();
-      await std.setBool(savekeyname, true);
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Home()));
-    }else{
-      setState(() {
-        _dataMatched = false;
-      });
-    }
-  }
-  
+
+  void checklogin(BuildContext ctx)async{ 
+  final _username = _userController.text;
+  final _password = _passwordController.text;
+  if(_username == "adnan" && _password == "123"){
+     final _srdprf=await SharedPreferences.getInstance();
+     await _srdprf.setBool(savekeyname, true);
+
+    print("username and password match");
+
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx1)=> Home())); 
+  }else{
+    setState(() {
+      _dataMatched = false;
+    });
+  }  
+}
 }

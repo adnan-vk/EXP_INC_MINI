@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mini/main.dart';
+import 'package:mini/screens/home.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'login.dart';
 
 class Splash extends StatefulWidget {
@@ -12,7 +15,7 @@ class _SplashState extends State<Splash> {
 
   @override
   void initState() {
-    gotoLogin();
+    checkuserlogin();
     super.initState();
   }
   @override
@@ -32,8 +35,27 @@ class _SplashState extends State<Splash> {
       ),
     );
   }
+  // @override
+  // void dispose(){
+  //   super.dispose();
+  // }
   Future <void> gotoLogin()async{
     await Future.delayed(Duration(seconds: 3));
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Login()));
+  }
+  Future gotoHome()async{
+    await Future.delayed(Duration(seconds: 3));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+  }
+  void checkuserlogin()async{
+    final _sharedprf=await SharedPreferences.getInstance();
+    final _userlogin=_sharedprf.getBool(savekeyname);
+    if(_userlogin==null || _userlogin==false){
+      gotoLogin();
+    }else{
+      gotoHome();
+    }
+
+
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini/screens/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -85,7 +86,7 @@ class _SettingsState extends State<Settings> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Login()));
+                        signout(context);
                       },
                       child: const Card(
                         color: Color.fromARGB(255, 95, 91, 91),
@@ -113,5 +114,13 @@ class _SettingsState extends State<Settings> {
         ),
       ),
     );
+  }
+  signout(BuildContext ctx) async{
+    final sharedpre=await SharedPreferences.getInstance();
+    await sharedpre.clear();
+
+    Navigator.of(ctx).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (ctx) => const Login()), (route) => false);
+
   }
 }
