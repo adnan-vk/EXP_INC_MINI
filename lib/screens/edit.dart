@@ -98,7 +98,7 @@ class _EditState extends State<Edit> {
                         decoration: InputDecoration(
                           
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
+                            borderRadius: BorderRadius.circular(20),
                           ),
                           labelText: "DATE",
                           suffixIcon: const Icon(Icons.calendar_today),
