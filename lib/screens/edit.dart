@@ -127,7 +127,7 @@ class _EditState extends State<Edit> {
                           vertical: width*0.03,
                             horizontal: height*0.03
                         ),
-                        child: const Text("UPDATE",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),),
+                        child: const Text("UPDATE",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900 ),),
                       ))
                     ],
                   ),

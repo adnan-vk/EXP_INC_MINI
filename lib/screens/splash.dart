@@ -35,10 +35,6 @@ class _SplashState extends State<Splash> {
       ),
     );
   }
-  // @override
-  // void dispose(){
-  //   super.dispose();
-  // }
   Future <void> gotoLogin()async{
     await Future.delayed(Duration(seconds: 3));
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Login()));
