@@ -57,6 +57,8 @@ class _AddState extends State<Add> {
                       ),
                       const SizedBox(height: 10,),
                       DropdownButton <String>(
+                        dropdownColor: const Color.fromARGB(255, 208, 203, 203),
+                        borderRadius: BorderRadius.circular(20),
                         isExpanded: true,
                         underline: Container(
                           height: 2,
