@@ -10,7 +10,7 @@ void addTransaction(transactionmodel value)async{
   transactionListNotifier.value.add(value);
   transactionListNotifier.notifyListeners();
 }
-
+ 
 void getAllTransaction()async{
   final transactionDB= await Hive.openBox<transactionmodel>('transaction_db');
   transactionListNotifier.value.clear();

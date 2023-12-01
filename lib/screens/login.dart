@@ -152,7 +152,7 @@ class _LoginState extends State<Login> {
   void checklogin(BuildContext ctx)async{ 
   final _username = _userController.text;
   final _password = _passwordController.text;
-  if(_username == "adnan" && _password == "123"){
+  if(_username == "ADNAN" && _password == "123"){
      final _srdprf=await SharedPreferences.getInstance();
      await _srdprf.setBool(savekeyname, true);
 

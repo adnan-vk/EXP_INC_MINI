@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mini/screens/about.dart';
 import 'package:mini/screens/login.dart';
+import 'package:mini/screens/privacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Settings extends StatefulWidget {
@@ -36,7 +38,7 @@ class _SettingsState extends State<Settings> {
                       backgroundImage: AssetImage('assets/img.jpg'),
                       radius: 40,
                     ),SizedBox(width: 15,),
-                    Text("User Name",style: TextStyle(color: Colors.red,fontSize: 20,fontWeight: FontWeight.w900),),
+                    Text("ADNAN",style: TextStyle(color: Colors.red,fontSize: 20,fontWeight: FontWeight.w900),),
                   ],
                 ),
               ),
@@ -55,6 +57,9 @@ class _SettingsState extends State<Settings> {
                 child: Column(
                   children: [
                     GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>About()));
+                      },
                       child: const Card(
                         color: Color.fromARGB(255, 95, 91, 91),
                         child: Padding(
@@ -70,6 +75,9 @@ class _SettingsState extends State<Settings> {
                       ),
                     ),
                     GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Privacy()));
+                      },
                       child: const Card(
                         color: Color.fromARGB(255, 95, 91, 91),
                         child: Padding(
@@ -120,7 +128,7 @@ class _SettingsState extends State<Settings> {
     await sharedpre.clear();
 
     Navigator.of(ctx).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (ctx) => const Login()), (route) => false);
+        MaterialPageRoute(builder: (ctx) => const Login()), (route) => true,);
 
   }
 }

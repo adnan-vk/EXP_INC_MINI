@@ -80,7 +80,6 @@ class _AddState extends State<Add> {
                           });
                         },
                         items: const [
-
                           DropdownMenuItem(
                             value: "Select type",
                             child:Text("Select type",style: TextStyle(

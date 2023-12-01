@@ -77,8 +77,8 @@ class _HomeTabState extends State<HomeTab> {
                                 Text(data.discription,style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
                                 SizedBox(height: 10,),
                                 Text(data.date,style: TextStyle(fontWeight: FontWeight.w500),),
-                                // Text("Get the salary",style: TextStyle(fontWeight: FontWeight.w100),),
-                                
+                                Text(data.type,style: TextStyle(fontWeight: FontWeight.w300,
+                                color: data.type == "INCOME"? Colors.green : data.type == "EXPENCE" ? Colors.red : Colors.black,fontSize: 15),),
                               ],
                             ),
                             Column(
