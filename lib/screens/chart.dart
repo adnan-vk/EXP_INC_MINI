@@ -15,12 +15,12 @@ class MyChart extends StatelessWidget {
       body:
       Padding(
         padding: const EdgeInsets.all(50),
-        child: PieChart( swapAnimationDuration: const Duration(seconds: 0),swapAnimationCurve: Curves.bounceIn,
+        child: PieChart( 
                     PieChartData(
                       sections:[
-                      PieChartSectionData(value: 200,title: "FOOD",color: const Color.fromARGB(255, 184, 67, 20)),
-                      PieChartSectionData(value: 350,title: "RECHARGE",color: const Color.fromARGB(255, 243, 236, 184)),
-                      PieChartSectionData(value: 150,title: "hello",color: const Color.fromARGB(255, 148, 207, 150)),
+                      PieChartSectionData(value: 40,title: "FOOD",color: const Color.fromARGB(255, 184, 67, 20)),
+                      PieChartSectionData(value: 35,title: "RECHARGE",color: const Color.fromARGB(255, 243, 236, 184)),
+                      PieChartSectionData(value: 25,title: "hello",color: const Color.fromARGB(255, 148, 207, 150)),
            
                       ]),
                     ),
