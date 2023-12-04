@@ -14,7 +14,7 @@ class _PrivacyState extends State<Privacy> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 1, 56, 86),
         centerTitle: true,
-        title: Text("PRIVACY AND SECURITY"),
+        title: const Text("PRIVACY AND SECURITY"),
       ),
     );
   }

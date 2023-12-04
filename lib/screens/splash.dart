@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini/main.dart';
-import 'package:mini/screens/home.dart';
+import 'package:mini/screens/bottombar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'login.dart';
 
@@ -36,12 +36,12 @@ class _SplashState extends State<Splash> {
     );
   }
   Future <void> gotoLogin()async{
-    await Future.delayed(Duration(seconds: 3));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Login()));
+    await Future.delayed(const Duration(seconds: 3));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Login()));
   }
   Future gotoHome()async{
-    await Future.delayed(Duration(seconds: 3));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Home()));
+    await Future.delayed(const Duration(seconds: 3));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Home()));
   }
   void checkuserlogin()async{
     final _sharedprf=await SharedPreferences.getInstance();

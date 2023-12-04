@@ -11,7 +11,7 @@ class HomeTab extends StatefulWidget {
   State<HomeTab> createState() => _HomeTabState();
 }
 
-bool? ischecked = false;
+bool? checkbox = false;
 class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
@@ -68,15 +68,15 @@ class _HomeTabState extends State<HomeTab> {
                     ),
                       child: 
                       Padding(
-                        padding:  EdgeInsets.all(10),
+                        padding:  const EdgeInsets.all(10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                              Column(
                               children: [
-                                Text(data.discription,style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
-                                SizedBox(height: 10,),
-                                Text(data.date,style: TextStyle(fontWeight: FontWeight.w500),),
+                                Text(data.discription,style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 20),),
+                                const SizedBox(height: 10,),
+                                Text(data.date,style: const TextStyle(fontWeight: FontWeight.w500),),
                                 Text(data.type,style: TextStyle(fontWeight: FontWeight.w300,
                                 color: data.type == "INCOME"? Colors.green : data.type == "EXPENCE" ? Colors.red : Colors.black,fontSize: 15),),
                               ],
@@ -84,15 +84,15 @@ class _HomeTabState extends State<HomeTab> {
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                 Text(data.amount,style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25),),
+                                 Text(data.amount,style: const TextStyle(fontWeight: FontWeight.w900,fontSize: 25),),
                                 Row(
                                   children: [
                                      Checkbox(
-                                      value: ischecked, 
+                                      value: checkbox, 
                                     activeColor: Colors.red,
                                 onChanged: (newbool){
                                   setState(() {
-                                    ischecked = newbool;
+                                    checkbox = newbool;
                                   });
                                 }),
                                     IconButton(onPressed: (){

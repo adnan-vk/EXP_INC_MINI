@@ -62,7 +62,7 @@ class _SettingsState extends State<Settings> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>About()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const About()));
                         },
                         child: const Card(
                           color: Color.fromARGB(255, 95, 91, 91),
@@ -80,7 +80,7 @@ class _SettingsState extends State<Settings> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Privacy()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const Privacy()));
                         },
                         child: const Card(
                           color: Color.fromARGB(255, 95, 91, 91),
