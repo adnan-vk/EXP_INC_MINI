@@ -127,7 +127,7 @@ class _AddState extends State<Add> {
                             firstDate: DateTime(2000), lastDate: DateTime(2100));
                             if(pickdate != null){
                               setState(() {
-                                _date.text = DateFormat('dd-MM-yyyy').format(pickdate);
+                                _date.text = DateFormat.yMd().format(pickdate);
                               });
                             }
                         },

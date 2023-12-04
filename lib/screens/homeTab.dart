@@ -87,7 +87,8 @@ class _HomeTabState extends State<HomeTab> {
                                  Text(data.amount,style: TextStyle(fontWeight: FontWeight.w900,fontSize: 25),),
                                 Row(
                                   children: [
-                                     Checkbox(value: ischecked, 
+                                     Checkbox(
+                                      value: ischecked, 
                                     activeColor: Colors.red,
                                 onChanged: (newbool){
                                   setState(() {
