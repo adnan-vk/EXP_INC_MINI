@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini/main.dart';
-import 'package:mini/screens/home.dart';
+import 'package:mini/screens/bottombar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatefulWidget {
@@ -39,6 +39,8 @@ class _LoginState extends State<Login> {
                     right: 10,
                     bottom: 70
                   ),
+
+                  
                   child: Image.asset('assets/logo 2.png'),
                 ),
             ),
@@ -164,5 +166,5 @@ class _LoginState extends State<Login> {
       _dataMatched = false;
     });
   }  
-}
+ }
 }

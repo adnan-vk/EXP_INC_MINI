@@ -120,7 +120,7 @@ class _AddState extends State<Add> {
                           labelText: "DATE",
                           suffixIcon: const Icon(Icons.calendar_today),
                         ),
-                        onTap: () async{
+                        onTap: () async{ 
                           DateTime? pickdate =await showDatePicker(
                             context: context, 
                             initialDate: DateTime.now(), 
@@ -170,5 +170,6 @@ class _AddState extends State<Add> {
     final _transa = transactionmodel(discription: _descr, type: _typ, amount: _amout, date: _dte);
     addTransaction(_transa);
     HomeTab();
+    // Navigator.of(context).pop();
   }
 }

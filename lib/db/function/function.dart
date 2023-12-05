@@ -17,3 +17,20 @@ void getAllTransaction()async{
   transactionListNotifier.value.addAll(transactionDB.values);
   transactionListNotifier.notifyListeners();
 }
+
+Future<void> deleteTransaction(int index)async{
+  final transactiondb=await Hive.openBox<transactionmodel>('transaction_db');
+  await transactiondb.deleteAt(index);
+  getAllTransaction();
+}
+
+// Future<void> updatestudent(int index)async{
+//     final transactiondb=await Hive.openBox<transactionmodel>('transaction_db');
+//       final stdupdate = transactionmodel(
+//         discription: desr., 
+//         type: type, 
+//         amount: amount, 
+//         date: date)
+//         await studentdb.putAt(index, stdupdate);
+//         getAllStudents();
+//   }

@@ -8,6 +8,10 @@ class Edit extends StatefulWidget {
   @override
   State<Edit> createState() => _EditState();
 }
+final date = TextEditingController();
+final decr = TextEditingController();
+final type = TextEditingController();
+final amt = TextEditingController();
 TextEditingController _date = TextEditingController();
 String dropdownvalue = "INCOME";
 
@@ -48,6 +52,7 @@ class _EditState extends State<Edit> {
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: decr,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20)
@@ -83,6 +88,7 @@ class _EditState extends State<Edit> {
                       ),
                       const SizedBox(height: 10,),
                       TextFormField(
+                        controller: amt,
                         keyboardType: TextInputType.number,
                         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                         decoration: InputDecoration(
@@ -95,7 +101,7 @@ class _EditState extends State<Edit> {
                       const SizedBox(height: 10,),
                       TextFormField(
                         readOnly: true,
-                        controller: _date,
+                        controller: date,
                         keyboardType: TextInputType.datetime,
                         decoration: InputDecoration(
                           
