@@ -143,8 +143,8 @@ class _AddState extends State<Add> {
                         }, 
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
+                          horizontal: height*0.03,
                           vertical: width*0.03,
-                            horizontal: height*0.03
                         ),
                         child: const Text("SAVE",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),),
                       ))
