@@ -73,6 +73,14 @@ class _LoginState extends State<Login> {
                             style: const TextStyle(color: Colors.white),
                             controller: _userController,
                             decoration: InputDecoration(
+                               errorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                               borderSide: BorderSide(color: Colors.red)
+                              ),
+                               focusedErrorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                               borderSide: BorderSide(color: Colors.red)
+                              ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(30)
@@ -98,6 +106,14 @@ class _LoginState extends State<Login> {
                             style: const TextStyle(color: Colors.white),
                             controller: _passwordController,
                             decoration: InputDecoration(
+                              errorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                               borderSide: BorderSide(color: Colors.red)
+                              ),
+                               focusedErrorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                               borderSide: BorderSide(color: Colors.red)
+                              ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
                                   color: Colors.white,

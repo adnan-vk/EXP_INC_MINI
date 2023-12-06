@@ -139,34 +139,26 @@ class _SettingsState extends State<Settings> {
   }
 
   sheet(){
-    showBottomSheet(context: context, builder: (context) {
-      return Container(
-        color: const Color.fromARGB(255, 3, 45, 79),
-        padding: EdgeInsets.all(50),
-        // width: 400,
-        height: 200,
-        child: Column(
+    return showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        title: Column(
           children: [
-            Text("Are You Sure Want To LogOut",style: TextStyle(color: Colors.white),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ElevatedButton(
-                  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.yellow),),
-                  onPressed: (){
-                  Navigator.pop(context);
-                }, child: Text("CANCEL",style: TextStyle(color: Colors.black),)),
-                // SizedBox(width: 50,),
-                ElevatedButton(
-                  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.yellow)),
-                  onPressed: (){
-                  signout(context);
-                }, child: Text("LOGOUT",style: TextStyle(color: Colors.black))),
-
-              ],
-            )
+            Text("LOG OUT"),
+            Text("This Action Will Navigate You To Login Screen",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15),textAlign: TextAlign.center,),
           ],
         ),
+        actions: [
+          ElevatedButton(
+                style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(const Color.fromARGB(255, 3, 45, 79)),),
+                  onPressed: (){
+                  Navigator.pop(context);
+                }, child: Text("CANCEL",)),
+                ElevatedButton(
+                  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(const Color.fromARGB(255, 3, 45, 79))),
+                  onPressed: (){
+                  signout(context);
+                }, child: Text("LOGOUT",)),
+        ],
       );
     },);
   }
