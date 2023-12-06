@@ -26,13 +26,13 @@ Future<void> deleteTransaction(int index)async{
 }
 
 Future<void> updatetransaction(int index)async{
-    final studentdb=await Hive.openBox<transactionmodel>('student_db');
+    final transactiondb=await Hive.openBox<transactionmodel>('transaction_db');
       final traupdate = transactionmodel(
         discription: decr.text, 
         type: type.text, 
         amount: amt.text, 
         date: date.text        
         );
-        await studentdb.putAt(index, traupdate);
+        await transactiondb.putAt(index, traupdate);
         getAllTransaction();
   }
