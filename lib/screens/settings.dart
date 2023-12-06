@@ -98,7 +98,8 @@ class _SettingsState extends State<Settings> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          signout(context);
+                          // signout(context);
+                          sheet();
                         },
                         child: const Card(
                           color: Color.fromARGB(255, 95, 91, 91),
@@ -135,5 +136,38 @@ class _SettingsState extends State<Settings> {
     Navigator.of(ctx).pushAndRemoveUntil(
         MaterialPageRoute(builder: (ctx) => const Login()), (route) => true,);
 
+  }
+
+  sheet(){
+    showBottomSheet(context: context, builder: (context) {
+      return Container(
+        color: const Color.fromARGB(255, 3, 45, 79),
+        padding: EdgeInsets.all(50),
+        // width: 400,
+        height: 200,
+        child: Column(
+          children: [
+            Text("Are You Sure Want To LogOut",style: TextStyle(color: Colors.white),),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ElevatedButton(
+                  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.yellow),),
+                  onPressed: (){
+                  Navigator.pop(context);
+                }, child: Text("CANCEL",style: TextStyle(color: Colors.black),)),
+                // SizedBox(width: 50,),
+                ElevatedButton(
+                  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.yellow)),
+                  onPressed: (){
+                  signout(context);
+                }, child: Text("LOGOUT",style: TextStyle(color: Colors.black))),
+
+              ],
+            )
+          ],
+        ),
+      );
+    },);
   }
 }

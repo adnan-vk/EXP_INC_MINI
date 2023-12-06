@@ -183,14 +183,6 @@ class _HomeTabState extends State<HomeTab> {
         backgroundColor: const Color.fromARGB(255, 1, 56, 86),
         centerTitle: true,
         title: const Text("TRANSACTIONS"),
-        actions: [
-          IconButton(
-            onPressed: () {
-              
-            },
-            icon: const Icon(Icons.delete_outlined, color: Colors.red),
-          ),
-        ],
       ),
       body: Stack(
         children: [
