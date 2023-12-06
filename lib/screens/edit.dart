@@ -1,21 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:mini/db/function/function.dart';
+
+
+final decr = TextEditingController();
+final type = TextEditingController();
+final amt = TextEditingController();
+TextEditingController date = TextEditingController();
 
 class Edit extends StatefulWidget {
-  const Edit({super.key});
+  final String decr;
+  final String type;
+  final String amount;
+  final String date;
+  final int index;
+
+  const Edit({super.key, 
+  required this.decr, 
+  required this.type, 
+  required this.amount, 
+  required this.date, 
+  required this.index});
 
   @override
   State<Edit> createState() => _EditState();
 }
-final date = TextEditingController();
-final decr = TextEditingController();
-final type = TextEditingController();
-final amt = TextEditingController();
-TextEditingController _date = TextEditingController();
+
 String dropdownvalue = "INCOME";
 
 class _EditState extends State<Edit> {
+
+  void initState(){
+    super.initState();
+
+    decr.text = widget.decr;
+    type.text = widget.type;
+    amt.text = widget.amount;
+    date.text = widget.date;
+  }
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -118,7 +141,7 @@ class _EditState extends State<Edit> {
                             firstDate: DateTime(2000), lastDate: DateTime(2100));
                             if(pickdate != null){
                               setState(() {
-                                _date.text = DateFormat.yMd().format(pickdate);
+                                date.text = DateFormat.yMd().format(pickdate);
                               });
                             }
                         },
@@ -129,7 +152,10 @@ class _EditState extends State<Edit> {
                           backgroundColor: MaterialStatePropertyAll(Colors.yellow),
                           side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
                           ),
-                        onPressed: (){}, 
+                        onPressed: (){
+                          Navigator.pop(context);
+                          updatetransaction(widget.index);
+                        }, 
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
                           vertical: width*0.03,

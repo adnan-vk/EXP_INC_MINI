@@ -283,7 +283,12 @@ class _HomeTabState extends State<HomeTab> {
                                             // ),
                                             IconButton(
                                               onPressed: () {
-                                                Navigator.push(context, MaterialPageRoute(builder: (context) => const Edit()));
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) =>  Edit(
+                                                  index : index,
+                                                  decr: data.discription, 
+                                                  type: data.type, 
+                                                  amount: data.amount, 
+                                                  date: data.date,)));
                                               },
                                               icon: const Icon(Icons.edit, size: 20,),
                                             ),

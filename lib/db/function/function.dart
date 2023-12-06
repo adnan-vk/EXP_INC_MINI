@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:mini/db/model/model.dart';
+import 'package:mini/screens/edit.dart';
 
 ValueNotifier<List <transactionmodel>> transactionListNotifier=ValueNotifier([]);
 
@@ -24,13 +25,14 @@ Future<void> deleteTransaction(int index)async{
   getAllTransaction();
 }
 
-// Future<void> updatestudent(int index)async{
-//     final transactiondb=await Hive.openBox<transactionmodel>('transaction_db');
-//       final stdupdate = transactionmodel(
-//         discription: desr., 
-//         type: type, 
-//         amount: amount, 
-//         date: date)
-//         await studentdb.putAt(index, stdupdate);
-//         getAllStudents();
-//   }
+Future<void> updatetransaction(int index)async{
+    final studentdb=await Hive.openBox<transactionmodel>('student_db');
+      final traupdate = transactionmodel(
+        discription: decr.text, 
+        type: type.text, 
+        amount: amt.text, 
+        date: date.text        
+        );
+        await studentdb.putAt(index, traupdate);
+        getAllTransaction();
+  }

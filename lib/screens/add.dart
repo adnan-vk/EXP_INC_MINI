@@ -139,6 +139,7 @@ class _AddState extends State<Add> {
                           side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
                           ),
                         onPressed: (){
+                          // Navigator.pop(context);
                           onSaveButtonClicked();
                         }, 
                       child: Padding(
