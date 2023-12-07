@@ -42,7 +42,7 @@ class _SplashState extends State<Splash> {
   }
   Future gotoHome()async{
     await Future.delayed(const Duration(seconds: 3));
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Home()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Bottom()));
   }
   void checkuserlogin()async{
     final _sharedprf=await SharedPreferences.getInstance();

@@ -35,6 +35,7 @@ class _HomeTabState extends State<HomeTab> {
     });
   }
 
+double currentbalance = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,7 +87,12 @@ class _HomeTabState extends State<HomeTab> {
                           final data = addtransaction[index];
                           return GestureDetector(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Details()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) =>  Details(
+                                decr: data.discription, 
+                                type: data.type, 
+                                amount: data.amount, 
+                                date: data.date, 
+                                index: index)));
                             },
                             child: Card(
                               elevation: 5,
@@ -156,5 +162,20 @@ class _HomeTabState extends State<HomeTab> {
       ),
     );
   }
-  
+  bal(){
+  double income = 0.0;
+  double expence = 0.0;
+
+  for(var x in transactionListNotifier.value){
+    if(x.type == "INCOME"){
+      income += double.parse(x.amount);
+    }else if(x.type == "EXPENCE"){
+      expence += double.parse(x.amount);
+    }
+  }
+  setState(){
+   currentbalance = income - expence;
+  }
+  return currentbalance;
+}
 }

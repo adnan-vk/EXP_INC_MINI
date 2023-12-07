@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:mini/db/function/function.dart';
 import 'package:mini/db/model/model.dart';
+import 'package:mini/screens/bottombar.dart';
 import 'package:mini/screens/hometab.dart';
 
 class Add extends StatefulWidget {
@@ -139,8 +140,8 @@ class _AddState extends State<Add> {
                           side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
                           ),
                         onPressed: (){
-                          // Navigator.pop(context);
                           onSaveButtonClicked();
+                          //  Navigator.pop(context);
                         }, 
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
@@ -171,6 +172,5 @@ class _AddState extends State<Add> {
     final _transa = transactionmodel(discription: _descr, type: _typ, amount: _amout, date: _dte);
     addTransaction(_transa);
     HomeTab();
-    // Navigator.of(context).pop();
   }
 }

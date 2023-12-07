@@ -176,7 +176,7 @@ class _LoginState extends State<Login> {
 
     print("username and password match");
 
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx1)=> Home())); 
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx1)=> Bottom())); 
   }else{
     setState(() {
       _dataMatched = false;

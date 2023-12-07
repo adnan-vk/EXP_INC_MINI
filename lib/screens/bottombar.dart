@@ -5,11 +5,11 @@ import 'package:mini/screens/homeTab.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:mini/screens/settings.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Bottom extends StatefulWidget {
+  const Bottom({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Bottom> createState() => _BottomState();
 }
 int currentindex = 0;
 
@@ -20,7 +20,7 @@ final List _tabs = [
   const Settings(),
 ];
 
-class _HomeState extends State<Home> {
+class _BottomState extends State<Bottom> {
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width; 
