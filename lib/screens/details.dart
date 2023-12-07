@@ -21,14 +21,6 @@ class Details extends StatefulWidget {
 
 class _DetailsState extends State<Details> {
   @override
-  // void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   decr.text = widget.decr;
-  //   .text = widget.decr;
-  //   decr.text = widget.decr;
-  //   decr.text = widget.decr;
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +59,7 @@ class _DetailsState extends State<Details> {
                         Text("ITEM",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
                       Column(
                         children: [
-                          Text(widget.decr,style: TextStyle(fontWeight: FontWeight.w400),),
+                          Text(widget.decr,style: TextStyle(fontWeight: FontWeight.w600),),
                         ],
                       )
                       ],
@@ -82,7 +74,7 @@ class _DetailsState extends State<Details> {
                     Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Amount",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
-                        Text(widget.amount),
+                        Text(widget.amount,style: TextStyle(fontWeight: FontWeight.w600),),
                       ],
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,

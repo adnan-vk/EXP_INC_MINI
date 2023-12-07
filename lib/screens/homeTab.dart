@@ -13,7 +13,7 @@ class HomeTab extends StatefulWidget {
 
 
 class _HomeTabState extends State<HomeTab> {
-  String _search = " ";
+  String _search = "";
   List<transactionmodel> searchList = [];
   List<transactionmodel> srlist = [];
 

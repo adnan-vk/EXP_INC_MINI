@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 import 'package:mini/db/function/function.dart';
 import 'package:mini/db/model/model.dart';
-import 'package:mini/screens/bottombar.dart';
-import 'package:mini/screens/hometab.dart';
 
 class Add extends StatefulWidget {
   const Add({super.key});
@@ -18,6 +16,8 @@ final _type = TextEditingController();
 final _amt = TextEditingController();
 
 String dropdownvalue = "Select type";
+
+final _formKey = GlobalKey<FormState>();
 
 class _AddState extends State<Add> {
   @override
@@ -47,110 +47,120 @@ class _AddState extends State<Add> {
                   left: 15,right: 15,
                   bottom: 150
                 ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30)
-                  ),
-                  padding: const EdgeInsets.all(15),
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        controller: _decr,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
-                          ),
-                          labelText: "DISCRIPTION"
-                        ),
-                      ),
-                      const SizedBox(height: 10,),
-                      DropdownButton <String>(
-                        dropdownColor: const Color.fromARGB(255, 208, 203, 203),
-                        borderRadius: BorderRadius.circular(20),
-                        isExpanded: true,
-                        underline: Container(
-                          height: 2,
-                          color: Colors.grey,
-                        ),
-                        value: dropdownvalue,
-                        onChanged: (String? newvalue) {
-                          setState(() {
-                            dropdownvalue = newvalue.toString();
-                            _type.text = dropdownvalue;
-                          });
-                        },
-                        items: const [
-                          DropdownMenuItem(
-                            value: "Select type",
-                            child:Text("Select type",style: TextStyle(
-                              // color: Colors.green
-                            ),)),
-                          DropdownMenuItem(
-                            value: "INCOME",
-                            child:Text("INCOME",style: TextStyle(
-                              color: Colors.green
-                            ),)),
-                          DropdownMenuItem(
-                            value: "EXPENCE",
-                            child:Text("EXPENCE",style: TextStyle(color: Colors.red),)),
-                        ],
-                      ),
-                      const SizedBox(height: 10,),
-                      TextFormField(
-                        controller: _amt,
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
-                          ),
-                          labelText: "ENTER THE AMOUNT",
-                        ),
-                      ),
-                      const SizedBox(height: 10,),
-                      TextFormField(
-                        readOnly: true,
-                        controller: _date,
-                        keyboardType: TextInputType.datetime,
-                        decoration: InputDecoration(
-                          
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
-                          ),
-                          labelText: "DATE",
-                          suffixIcon: const Icon(Icons.calendar_today),
-                        ),
-                        onTap: () async{ 
-                          DateTime? pickdate =await showDatePicker(
-                            context: context, 
-                            initialDate: DateTime.now(), 
-                            firstDate: DateTime(2000), lastDate: DateTime(2100));
-                            if(pickdate != null){
-                              setState(() {
-                                _date.text = DateFormat.yMd().format(pickdate);
-                              });
+                child: Form(
+                  key: _formKey,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30)
+                    ),
+                    padding: const EdgeInsets.all(15),
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          validator: (value) {
+                            if(value == null || value.isEmpty){
+                              return "the value is empty";
+                            }else{
+                              return null;
                             }
-                        },
-                      ),
-                       const SizedBox(height: 10,),
-                      ElevatedButton(
-                        style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(Colors.yellow),
-                          side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
+                          },
+                          controller: _decr,
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)
+                            ),
+                            labelText: "DISCRIPTION"
                           ),
-                        onPressed: (){
-                          onSaveButtonClicked();
-                          //  Navigator.pop(context);
-                        }, 
-                      child: Padding(
-                        padding:  EdgeInsets.symmetric(
-                          horizontal: height*0.03,
-                          vertical: width*0.03,
                         ),
-                        child: const Text("SAVE",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),),
-                      ))
-                    ],
+                        const SizedBox(height: 10,),
+                        DropdownButton <String>(
+                          dropdownColor: const Color.fromARGB(255, 208, 203, 203),
+                          borderRadius: BorderRadius.circular(20),
+                          isExpanded: true,
+                          underline: Container(
+                            height: 2,
+                            color: Colors.grey,
+                          ),
+                          value: dropdownvalue,
+                          onChanged: (String? newvalue) {
+                            setState(() {
+                              dropdownvalue = newvalue.toString();
+                              _type.text = dropdownvalue;
+                            });
+                          },
+                          items: const [
+                            DropdownMenuItem(
+                              value: "Select type",
+                              child:Text("Select type",style: TextStyle(
+                                // color: Colors.green
+                              ),)),
+                            DropdownMenuItem(
+                              value: "INCOME",
+                              child:Text("INCOME",style: TextStyle(
+                                color: Colors.green
+                              ),)),
+                            DropdownMenuItem(
+                              value: "EXPENCE",
+                              child:Text("EXPENCE",style: TextStyle(color: Colors.red),)),
+                          ],
+                        ),
+                        const SizedBox(height: 10,),
+                        TextFormField(
+                          controller: _amt,
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)
+                            ),
+                            labelText: "ENTER THE AMOUNT",
+                          ),
+                        ),
+                        const SizedBox(height: 10,),
+                        TextFormField(
+                          readOnly: true,
+                          controller: _date,
+                          keyboardType: TextInputType.datetime,
+                          decoration: InputDecoration(
+                            
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20)
+                            ),
+                            labelText: "DATE",
+                            suffixIcon: const Icon(Icons.calendar_today),
+                          ),
+                          onTap: () async{ 
+                            DateTime? pickdate =await showDatePicker(
+                              context: context, 
+                              initialDate: DateTime.now(), 
+                              firstDate: DateTime(2000), lastDate: DateTime(2100));
+                              if(pickdate != null){
+                                setState(() {
+                                  _date.text = DateFormat.yMd().format(pickdate);
+                                });
+                              }
+                          },
+                        ),
+                         const SizedBox(height: 10,),
+                        ElevatedButton(
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll(Colors.yellow),
+                            side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
+                            ),
+                          onPressed: (){
+                            onSaveButtonClicked();
+                            //  Navigator.pop(context);
+                          }, 
+                        child: Padding(
+                          padding:  EdgeInsets.symmetric(
+                            horizontal: height*0.03,
+                            vertical: width*0.03,
+                          ),
+                          child: const Text("SAVE",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w900),),
+                        ))
+                      ],
+                    ),
                   ),
                 ),
               )
@@ -171,6 +181,7 @@ class _AddState extends State<Add> {
     }
     final _transa = transactionmodel(discription: _descr, type: _typ, amount: _amout, date: _dte);
     addTransaction(_transa);
-    HomeTab();
+    // HomeTab();
+    Navigator.of(context).pop(true);
   }
 }

@@ -144,7 +144,7 @@ class _SettingsState extends State<Settings> {
         title: Column(
           children: [
             Text("LOG OUT"),
-            Text("This Action Will Navigate You To Login Screen",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15),textAlign: TextAlign.center,),
+            Text("DO YOU WANT TO LOG OUT FROM THIS USER",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15),textAlign: TextAlign.center,),
           ],
         ),
         actions: [
