@@ -125,7 +125,8 @@ double currentbalance = 0.0;
                                         Row(
                                           children: [
                                             IconButton(onPressed: (){
-                                              deleteTransaction(index);
+                                              // deleteTransaction(index);
+                                              delete(index);
                                               bal();
                                             }, 
                                             icon: const Icon(Icons.delete) ),
@@ -177,4 +178,30 @@ double currentbalance = 0.0;
     currentbalance = income - expence;
   });
 }
+
+delete(int index){
+    return showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        title: const Column(
+          children: [
+            Text("DELETE"),
+            Text("ARE U SURE WANT TO DELETE THIS TRANSACTION",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 15),textAlign: TextAlign.center,),
+          ],
+        ),
+        actions: [
+          ElevatedButton(
+                style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 3, 45, 79)),),
+                  onPressed: (){
+                  Navigator.pop(context);
+                }, child: const Text("CANCEL",)),
+                ElevatedButton(
+                  style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 3, 45, 79))),
+                  onPressed: (){
+                  deleteTransaction(index);
+                  Navigator.pop(context);
+                }, child: const Text("DELETE",)),
+        ],
+      );
+    },);
+  }
 }
