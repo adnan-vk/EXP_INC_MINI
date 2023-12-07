@@ -38,5 +38,3 @@ Future<void> updatetransaction(int index)async{
         await transactiondb.putAt(index, traupdate);
         getAllTransaction();
   }
-
-
