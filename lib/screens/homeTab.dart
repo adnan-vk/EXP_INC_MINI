@@ -20,9 +20,7 @@ class _HomeTabState extends State<HomeTab> {
   @override
   void initState() {
     super.initState();
-    getAllTransaction();
-    // bal();
-    
+    getAllTransaction();    
   }
 
   void searchResult() {
