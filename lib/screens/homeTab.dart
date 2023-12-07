@@ -20,7 +20,7 @@ class _HomeTabState extends State<HomeTab> {
   @override
   void initState() {
     super.initState();
-    getAllTransaction();    
+    getAllTransaction();
   }
 
   void searchResult() {
@@ -198,7 +198,9 @@ delete(int index){
                   style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 3, 45, 79))),
                   onPressed: (){
                   deleteTransaction(index);
+                  bal();
                   Navigator.pop(context);
+
                 }, child: const Text("DELETE",)),
         ],
       );

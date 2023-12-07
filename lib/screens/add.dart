@@ -179,9 +179,7 @@ class _AddState extends State<Add> {
     if(_descr.isEmpty || _amout.isEmpty || _typ.isEmpty || _dte.isEmpty){
       return;
     }
-    final _transa = transactionmodel(discription: _descr, type: _typ, amount: _amout, date: _dte);
-    addTransaction(_transa);
-    // HomeTab();
-    Navigator.of(context).pop(true);
+    final transa = transactionmodel(discription: _descr, type: _typ, amount: _amout, date: _dte);
+    addTransaction(transa);
   }
 }
