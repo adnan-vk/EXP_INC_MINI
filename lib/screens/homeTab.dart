@@ -13,15 +13,15 @@ class HomeTab extends StatefulWidget {
 
 
 class _HomeTabState extends State<HomeTab> {
-  String _search = "";
+  String _search = " ";
   List<transactionmodel> searchList = [];
-  // bool? checkbox = false;
+  List<transactionmodel> srlist = [];
 
   @override
   void initState() {
     super.initState();
     getAllTransaction();
-    bal();
+    // bal();
     
   }
 
@@ -31,13 +31,13 @@ class _HomeTabState extends State<HomeTab> {
           .where((transaction) =>
               transaction.discription.toLowerCase().contains(_search.toLowerCase()))
           .toList();
-          
     });
   }
 
 double currentbalance = 0.0;
   @override
   Widget build(BuildContext context) {
+    bal();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 1, 56, 86),
@@ -59,8 +59,8 @@ double currentbalance = 0.0;
                   onChanged: (value) {
                     setState(() {
                       _search = value;
-                      searchResult();
                     });
+                    searchResult();
                   },
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -77,11 +77,12 @@ double currentbalance = 0.0;
                 ),
                 const SizedBox(height: 10,),
                 const Text("Your Current Balance:",style: TextStyle(fontWeight: FontWeight.w500),),
-                 Text(currentbalance.toString(),style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Color.fromARGB(255, 1, 66, 120)),),
+                 Text(currentbalance.toString(),style: const TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Color.fromARGB(255, 1, 66, 120)),),
                 Expanded(
                   child: ValueListenableBuilder(
                     valueListenable: transactionListNotifier,
                     builder: (BuildContext ctx, List<transactionmodel> addtransaction, Widget? child) {
+                      final display = searchList.isNotEmpty ? searchList : addtransaction;
                       return ListView.builder(
                         itemBuilder: (context, index) {
                           final data = addtransaction[index];
@@ -127,8 +128,9 @@ double currentbalance = 0.0;
                                           children: [
                                             IconButton(onPressed: (){
                                               deleteTransaction(index);
+                                              bal();
                                             }, 
-                                            icon: Icon(Icons.delete) ),
+                                            icon: const Icon(Icons.delete) ),
                                             IconButton(
                                               onPressed: () {
                                                 Navigator.push(context, MaterialPageRoute(builder: (context) =>  Edit(
@@ -150,7 +152,7 @@ double currentbalance = 0.0;
                             ),
                           );
                         },
-                        itemCount: addtransaction.length,
+                        itemCount: display.length,
                       );
                     },
                   ),
@@ -173,9 +175,8 @@ double currentbalance = 0.0;
       expence += double.parse(x.amount);
     }
   }
-  setState(){
-   currentbalance = income - expence;
-  }
-  return currentbalance;
+  setState(() {
+    currentbalance = income - expence;
+  });
 }
 }
