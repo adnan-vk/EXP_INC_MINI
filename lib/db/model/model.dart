@@ -15,6 +15,7 @@ class transactionmodel extends HiveObject{
 
   @HiveField(3)
   final String date;
+  @HiveField(4)
 
   transactionmodel({required this.discription, required this.type, required this.amount, required this.date});
 }
