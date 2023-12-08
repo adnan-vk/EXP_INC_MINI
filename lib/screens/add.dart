@@ -107,13 +107,6 @@ class _AddState extends State<Add> {
                         ),
                         const SizedBox(height: 10,),
                         TextFormField(
-                          validator: (value) {
-                            if(value == null || value.isEmpty){
-                              return "the value is empty";
-                            }else{
-                              return null;
-                            }
-                          },
                           controller: _amt,
                           keyboardType: TextInputType.number,
                           inputFormatters: [FilteringTextInputFormatter.digitsOnly],
@@ -126,13 +119,6 @@ class _AddState extends State<Add> {
                         ),
                         const SizedBox(height: 10,),
                         TextFormField(
-                          validator: (value) {
-                            if(value == null || value.isEmpty){
-                              return "the value is empty";
-                            }else{
-                              return null;
-                            }
-                          },
                           readOnly: true,
                           controller: _date,
                           keyboardType: TextInputType.datetime,
@@ -163,13 +149,8 @@ class _AddState extends State<Add> {
                             side: MaterialStatePropertyAll(BorderSide(width: 2,color: Color.fromARGB(255, 3, 45, 79)))
                             ),
                           onPressed: (){
-                            if(_formKey.currentState!.validate()){
-                                onSaveButtonClicked();
-                              }else{
-                                print("data is empty");
-                              }
                             // Navigator.pop(context);
-                            
+                            onSaveButtonClicked();
                           }, 
                         child: Padding(
                           padding:  EdgeInsets.symmetric(
