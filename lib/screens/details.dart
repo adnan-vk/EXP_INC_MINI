@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mini/screens/edit.dart';
 
 class Details extends StatefulWidget {
   final String decr;

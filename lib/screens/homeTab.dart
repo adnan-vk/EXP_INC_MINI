@@ -26,8 +26,8 @@ class _HomeTabState extends State<HomeTab> {
   void searchResult() {
     setState(() {
       searchList = transactionListNotifier.value
-          .where((transaction) =>
-              transaction.discription.toLowerCase().contains(_search.toLowerCase()))
+          .where((transactionmodel) =>
+              transactionmodel.discription.toLowerCase().contains(_search.toLowerCase()))
           .toList();
     });
   }
@@ -35,6 +35,7 @@ class _HomeTabState extends State<HomeTab> {
 double currentbalance = 0.0;
   @override
   Widget build(BuildContext context) {
+    getAllTransaction();
     bal();
     return Scaffold(
       appBar: AppBar(
@@ -79,11 +80,11 @@ double currentbalance = 0.0;
                 Expanded(
                   child: ValueListenableBuilder(
                     valueListenable: transactionListNotifier,
-                    builder: (BuildContext ctx, List<transactionmodel> addtransaction, Widget? child) {
-                      final display = searchList.isNotEmpty ? searchList : addtransaction;
+                    builder: (BuildContext ctx, List<transactionmodel> srlist, Widget? child) {
+                      final display = _search.isNotEmpty ? searchList : srlist;
                       return ListView.builder(
                         itemBuilder: (context, index) {
-                          final data = addtransaction[index];
+                          final data = display[index];
                           return GestureDetector(
                             onTap: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context) =>  Details(
