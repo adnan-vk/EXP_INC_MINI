@@ -5,16 +5,19 @@ part 'model.g.dart';
 class transactionmodel extends HiveObject{
 
   @HiveField(0)
-  final String discription;
+  int? index;
 
   @HiveField(1)
-  final String type;
+  final String discription;
 
   @HiveField(2)
-  final String amount;
+  final String type;
 
   @HiveField(3)
+  final String amount;
+
+  @HiveField(4)
   final String date;
   
-  transactionmodel({required this.discription, required this.type, required this.amount, required this.date});
+  transactionmodel({required this.discription, required this.type, required this.amount, required this.date,this.index});
 }
