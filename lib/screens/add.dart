@@ -165,7 +165,6 @@ class _AddState extends State<Add> {
                           onPressed: (){
                           if(_formKey.currentState!.validate()){
                             onSaveButtonClicked();
-                            // Navigator.pop(context);
                            }
                           },
                         child: Padding(
@@ -197,5 +196,7 @@ class _AddState extends State<Add> {
     }
     final transa = transactionmodel(discription: _descr, type: _typ, amount: _amout, date: _dte);
     addTransaction(transa);
+    // Navigator.pop(context);
+    
   }
 }
