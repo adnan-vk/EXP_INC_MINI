@@ -74,14 +74,13 @@ class _AddState extends State<Add> {
                           ),
                         ),
                         const SizedBox(height: 10,),
-                        DropdownButton <String>(
-                          dropdownColor: const Color.fromARGB(255, 208, 203, 203),
-                          borderRadius: BorderRadius.circular(20),
-                          isExpanded: true,
-                          underline: Container(
-                            height: 2,
-                            color: Colors.grey,
+                        DropdownButtonFormField <String>(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
                           ),
+                          dropdownColor: const Color.fromARGB(255, 208, 203, 203),
+                          borderRadius: BorderRadius.circular(30),
+                          isExpanded: true,
                           value: dropdownvalue,
                           onChanged: (String? newvalue) {
                             setState(() {
@@ -196,7 +195,10 @@ class _AddState extends State<Add> {
     }
     final transa = transactionmodel(discription: _descr, type: _typ, amount: _amout, date: _dte);
     addTransaction(transa);
-    // Navigator.pop(context);
-    
+    _decr.clear();
+    _amt.clear();
+    _type.clear();
+    _date.clear();
+    Navigator.pop(context);
   }
 }
