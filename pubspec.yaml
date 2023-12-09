@@ -42,6 +42,7 @@ dependencies:
   # fl_chart: ^0.65.0
   fl_chart: ^0.41.0
   hive_flutter: ^1.1.0
+  lottie: ^2.7.0
 
 dev_dependencies:
   flutter_test:

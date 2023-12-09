@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class Details extends StatefulWidget {
   final String decr;
@@ -87,7 +88,8 @@ class _DetailsState extends State<Details> {
                   ],
                 ),
               ),
-            )
+            ),
+            Lottie.asset("assets/anm2.json")
           ],
         ),
       )

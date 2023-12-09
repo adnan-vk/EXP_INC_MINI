@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mini/db/function/function.dart';
 import 'package:mini/db/model/model.dart';
 import 'package:mini/screens/details.dart';
@@ -82,11 +83,12 @@ double currentbalance = 0.0;
                     valueListenable: transactionListNotifier,
                     builder: (BuildContext ctx, List<transactionmodel> srlist, Widget? child) {
                       final display = _search.isNotEmpty ? searchList : srlist;
-                      return ListView.builder(
+                      return display.isEmpty ? Lottie.asset('assets/anm1.json') : 
+                      ListView.builder(
                         itemBuilder: (context, index) {
                           final data = display[index];
                           return GestureDetector(
-                            onTap: () {
+                            onTap: () { 
                               Navigator.push(context, MaterialPageRoute(builder: (context) =>  Details(
                                 decr: data.discription, 
                                 type: data.type, 
