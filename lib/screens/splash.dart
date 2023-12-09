@@ -52,7 +52,5 @@ class _SplashState extends State<Splash> {
     }else{
       gotoHome();
     }
-
-
   }
 }

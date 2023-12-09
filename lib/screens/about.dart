@@ -8,13 +8,13 @@ class About extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("ABOUT"),
+        title: const Text("ABOUT"),
         backgroundColor: const Color.fromARGB(255, 1, 56, 86),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           color: Colors.grey,
           child: Column(
             children: [
@@ -23,7 +23,7 @@ class About extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(30)
                 ),
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 
                 child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

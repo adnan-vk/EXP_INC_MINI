@@ -126,7 +126,6 @@ double currentbalance = 0.0;
                                         Row(
                                           children: [
                                             IconButton(onPressed: (){
-                                              // deleteTransaction(index);
                                               delete(index);
                                               bal();
                                             }, 

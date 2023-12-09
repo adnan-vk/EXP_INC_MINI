@@ -55,10 +55,10 @@ class _DetailsState extends State<Details> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("ITEM",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+                        const Text("ITEM",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
                       Column(
                         children: [
-                          Text(widget.decr,style: TextStyle(fontWeight: FontWeight.w600),),
+                          Text(widget.decr,style: const TextStyle(fontWeight: FontWeight.w600),),
                         ],
                       )
                       ],
@@ -66,19 +66,19 @@ class _DetailsState extends State<Details> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Date",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
+                        const Text("Date",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
                         Text(widget.date),
                       ],
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Amount",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
-                        Text(widget.amount,style: TextStyle(fontWeight: FontWeight.w600),),
+                        const Text("Amount",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
+                        Text(widget.amount,style: const TextStyle(fontWeight: FontWeight.w600),),
                       ],
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Type",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
+                        const Text("Type",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600)),
                         Text(widget.type,style: TextStyle(
                           fontWeight: FontWeight.w500,
                           color: widget.type == 'INCOME'? Colors.green : widget.type == "EXPENCE"? Colors.red : Colors.black),),

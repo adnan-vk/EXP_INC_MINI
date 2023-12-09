@@ -75,11 +75,11 @@ class _LoginState extends State<Login> {
                             decoration: InputDecoration(
                                errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                               borderSide: BorderSide(color: Colors.red)
+                               borderSide: const BorderSide(color: Colors.red)
                               ),
                                focusedErrorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                               borderSide: BorderSide(color: Colors.red)
+                               borderSide: const BorderSide(color: Colors.red)
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(color: Colors.white),
@@ -108,11 +108,11 @@ class _LoginState extends State<Login> {
                             decoration: InputDecoration(
                               errorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                               borderSide: BorderSide(color: Colors.red)
+                               borderSide: const BorderSide(color: Colors.red)
                               ),
                                focusedErrorBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
-                               borderSide: BorderSide(color: Colors.red)
+                               borderSide: const BorderSide(color: Colors.red)
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
@@ -176,7 +176,7 @@ class _LoginState extends State<Login> {
 
     print("username and password match");
 
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx1)=> Bottom())); 
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx1)=> const Bottom())); 
   }else{
     setState(() {
       _dataMatched = false;

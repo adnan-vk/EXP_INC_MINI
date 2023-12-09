@@ -59,7 +59,7 @@ class _BottomState extends State<Bottom> {
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=>const Add()));
           },
-          child: Icon(Icons.add,color: Colors.black,),
+          child: const Icon(Icons.add,color: Colors.black,),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

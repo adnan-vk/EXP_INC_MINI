@@ -98,7 +98,6 @@ class _SettingsState extends State<Settings> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          // signout(context);
                           sheet();
                         },
                         child: const Card(
