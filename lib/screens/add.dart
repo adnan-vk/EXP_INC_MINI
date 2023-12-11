@@ -76,12 +76,12 @@ class _AddState extends State<Add> {
                         const SizedBox(height: 10,),
                         DropdownButtonFormField <String>(
                           decoration: InputDecoration(
+                            hintText: "Select Item",
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))
                           ),
                           dropdownColor: const Color.fromARGB(255, 208, 203, 203),
                           borderRadius: BorderRadius.circular(30),
                           isExpanded: true,
-                          value: dropdownvalue,
                           onChanged: (String? newvalue) {
                             setState(() {
                               dropdownvalue = newvalue.toString();
@@ -89,10 +89,6 @@ class _AddState extends State<Add> {
                             });
                           },
                           items: const [
-                            DropdownMenuItem(
-                              value: "Select type",
-                              child:Text("Select type",style: TextStyle(
-                              ),)),
                             DropdownMenuItem(
                               value: "INCOME",
                               child:Text("INCOME",style: TextStyle(
