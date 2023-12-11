@@ -92,7 +92,6 @@ class _AddState extends State<Add> {
                             DropdownMenuItem(
                               value: "Select type",
                               child:Text("Select type",style: TextStyle(
-                                // color: Colors.green
                               ),)),
                             DropdownMenuItem(
                               value: "INCOME",
