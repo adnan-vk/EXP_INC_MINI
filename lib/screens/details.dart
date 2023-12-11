@@ -46,7 +46,7 @@ class _DetailsState extends State<Details> {
                 child: Container(
                   padding: const EdgeInsets.only(
                     bottom: 50,
-                    top: 50,
+                    top: 50, 
                     left: 25,right: 25
                   ),
                   decoration: BoxDecoration(
