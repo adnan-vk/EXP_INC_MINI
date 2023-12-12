@@ -15,7 +15,7 @@ class Bottom extends StatefulWidget {
 
 final List _tabs = [
   const HomeTab(),
-  const MyChart(),
+   MyChart(),
   const Settings(),
 ];
 

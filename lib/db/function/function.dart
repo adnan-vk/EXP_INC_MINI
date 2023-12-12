@@ -38,3 +38,13 @@ Future<void> updatetransaction(int index)async{
         await transactiondb.putAt(index, traupdate);
         getAllTransaction();
   }
+
+//chart calcultion
+
+double calculateTotalCost(List<transactionmodel> foods) {
+  double totalCost = 0;
+  for (var food in foods) {
+    totalCost += double.parse(food.amount);
+  }
+  return totalCost;
+}
