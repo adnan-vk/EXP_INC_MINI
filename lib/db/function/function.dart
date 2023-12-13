@@ -30,10 +30,10 @@ Future<void> deleteTransaction(int index)async{
 Future<void> updatetransaction(int index)async{
     final transactiondb=await Hive.openBox<transactionmodel>('transaction_db');
       final traupdate = transactionmodel(
-        discription: decr.text, 
-        type: type.text, 
-        amount: amt.text, 
-        date: date.text        
+        discription: decr.text,
+        type: type.text,
+        amount: amt.text,
+        date: date.text,
         );
         await transactiondb.putAt(index, traupdate);
         getAllTransaction();
