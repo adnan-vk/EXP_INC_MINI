@@ -39,12 +39,11 @@ Future<void> updatetransaction(int index)async{
         getAllTransaction();
   }
 
-//chart calcultion
 
-double calculateTotalCost(List<transactionmodel> foods) {
+double calculateTotalCost(List<transactionmodel> Trans) {
   double totalCost = 0;
-  for (var food in foods) {
-    totalCost += double.parse(food.amount);
+  for (var x in Trans) {
+    totalCost += double.parse(x.amount);
   }
   return totalCost;
 }

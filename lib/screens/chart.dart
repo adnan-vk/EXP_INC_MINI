@@ -7,11 +7,10 @@ class MyChart extends StatelessWidget {
    MyChart({super.key});
 List Trans = transactionListNotifier.value;
  final List<Color> sectionColors = [
-    Colors.blue,
     Colors.green,
     Colors.orange,
+    Colors.blue,
     Colors.red,
-    // Add more colors as needed
   ];
 
   @override
@@ -43,10 +42,11 @@ List Trans = transactionListNotifier.value;
                   titlePositionPercentageOffset: .4,
                   color: sectionColors[index],
                   value: percentage,
-                  title: '''₹ ${cost.toStringAsFixed(2)}
-      (${percentage.toStringAsFixed(2)}%)
-      $name
-      ''',
+                  title: 
+                  ''' $name
+  (${percentage.toStringAsFixed(2)}%)
+  ₹ ${cost.toStringAsFixed(2)}
+''',
                   radius: 80,
                   titleStyle: const TextStyle(
                       fontSize: 12,
@@ -63,8 +63,6 @@ List Trans = transactionListNotifier.value;
       );
     },
   )
-    );
-    
-         
-  }
+);    
+}
 }
