@@ -91,7 +91,7 @@ double currentbalance = 0.0;
                             onTap: () { 
                               Navigator.push(context, MaterialPageRoute(builder: (context) =>  Details(
                                 decr: data.discription, 
-                                type: data.type, 
+                                type: data.type,
                                 amount: data.amount, 
                                 date: data.date, 
                                 index: index)));
