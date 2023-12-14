@@ -156,7 +156,7 @@ class _EditState extends State<Edit> {
                         onPressed: (){
                           Navigator.pop(context);
                           updatetransaction(widget.index);
-                        }, 
+                        },
                       child: Padding(
                         padding:  EdgeInsets.symmetric(
                           vertical: width*0.03,
