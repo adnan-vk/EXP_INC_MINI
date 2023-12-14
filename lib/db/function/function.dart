@@ -26,7 +26,7 @@ Future<void> deleteTransaction(int index)async{
   await transactiondb.deleteAt(index);
   getAllTransaction();
 }
-
+ 
 Future<void> updatetransaction(int index)async{
     final transactiondb=await Hive.openBox<transactionmodel>('transaction_db');
       final traupdate = transactionmodel(
