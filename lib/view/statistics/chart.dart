@@ -3,6 +3,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:mini/controller/function/function.dart';
 
+// ignore: must_be_immutable
 class MyChart extends StatelessWidget {
    MyChart({super.key});
 List Trans = transactionListNotifier.value;

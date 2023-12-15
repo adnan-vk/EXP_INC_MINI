@@ -11,6 +11,7 @@ void addTransaction(transactionmodel value)async{
   final transactionDB= await Hive.openBox<transactionmodel>('transaction_db');
   await transactionDB.add(value);
   transactionListNotifier.value.add(value);
+  // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
   transactionListNotifier.notifyListeners();
 }
 
@@ -18,6 +19,7 @@ void getAllTransaction()async{
   final transactionDB= await Hive.openBox<transactionmodel>('transaction_db');
   transactionListNotifier.value.clear();
   transactionListNotifier.value.addAll(transactionDB.values);
+  // ignore: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
   transactionListNotifier.notifyListeners();
 }
 
