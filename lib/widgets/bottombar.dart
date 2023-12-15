@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini/view/pages/add.dart';
+import 'package:mini/view/pages/hometab.dart';
 import 'package:mini/view/statistics/chart.dart';
-import 'package:mini/screens/homeTab.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:mini/view/settings/settings.dart';
 int currentindex = 0;

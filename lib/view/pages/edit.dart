@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:mini/controller/function/function.dart';
 
 
-final decr = TextEditingController();
+final   decr = TextEditingController();
 final type = TextEditingController();
 final amt = TextEditingController();
 TextEditingController date = TextEditingController();
