@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:mini/model/model.dart';
-import 'package:mini/screens/splash.dart';
+import 'package:mini/view/pages/splash.dart';
 const savekeyname = "user login";
 Future<void> main(List<String> args)async {
   await Hive.initFlutter();

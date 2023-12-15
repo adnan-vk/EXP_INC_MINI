@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mini/screens/about.dart';
-import 'package:mini/screens/login.dart';
-import 'package:mini/screens/privacy.dart';
+import 'package:mini/view/settings/about.dart';
+import 'package:mini/view/pages/login.dart';
+import 'package:mini/view/settings/privacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Settings extends StatefulWidget {

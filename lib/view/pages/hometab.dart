@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mini/controller/function/function.dart';
 import 'package:mini/model/model.dart';
-import 'package:mini/screens/details.dart';
-import 'package:mini/screens/edit.dart';
+import 'package:mini/view/pages/details.dart';
+import 'package:mini/view/pages/edit.dart';
+
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);

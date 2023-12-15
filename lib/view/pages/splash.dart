@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mini/main.dart';
-import 'package:mini/screens/bottombar.dart';
+import 'package:mini/widgets/bottombar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'login.dart';
 
