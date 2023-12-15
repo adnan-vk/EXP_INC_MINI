@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:mini/db/function/function.dart';
+import 'package:mini/controller/function/function.dart';
 
 
 final decr = TextEditingController();

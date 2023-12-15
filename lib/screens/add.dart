@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:mini/db/function/function.dart';
-import 'package:mini/db/model/model.dart';
+import 'package:mini/controller/function/function.dart';
+import 'package:mini/model/model.dart';
 
 class Add extends StatefulWidget {
   const Add({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:mini/db/model/model.dart';
+import 'package:mini/model/model.dart';
 import 'package:mini/screens/edit.dart';
 
 

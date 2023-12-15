@@ -1,7 +1,7 @@
 
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:mini/db/function/function.dart';
+import 'package:mini/controller/function/function.dart';
 
 class MyChart extends StatelessWidget {
    MyChart({super.key});
