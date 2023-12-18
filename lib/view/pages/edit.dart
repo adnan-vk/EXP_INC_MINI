@@ -16,7 +16,7 @@ class Edit extends StatefulWidget {
   final String date;
   final int index;
 
-  const Edit({super.key, 
+  const Edit({super.key,  
   required this.decr, 
   required this.type, 
   required this.amount, 

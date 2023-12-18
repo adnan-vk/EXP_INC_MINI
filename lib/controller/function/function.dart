@@ -5,7 +5,7 @@ import 'package:mini/view/pages/edit.dart';
 
 
 
-ValueNotifier<List <transactionmodel>> transactionListNotifier=ValueNotifier([]);
+ValueNotifier<List <transactionmodel>> transactionListNotifier=ValueNotifier([]); 
 
 void addTransaction(transactionmodel value)async{
   final transactionDB= await Hive.openBox<transactionmodel>('transaction_db');
