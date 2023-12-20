@@ -153,7 +153,6 @@ class HomeTab extends StatelessWidget {
       ),
     );
   }
-
 delete(int index, BuildContext context){
     return showDialog(context: context, builder: (context) {
       return AlertDialog(
@@ -173,7 +172,6 @@ delete(int index, BuildContext context){
                   style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 3, 45, 79))),
                   onPressed: (){
                   deleteTransaction(index);
-                  // Provider.bal();
                   Navigator.pop(context);
 
                 }, child: const Text("DELETE",)),
