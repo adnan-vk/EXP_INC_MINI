@@ -14,7 +14,6 @@ class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     getAllTransaction();
-    // Provider.bal();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 1, 56, 86),
@@ -55,7 +54,15 @@ class HomeTab extends StatelessWidget {
                 ),
                 const SizedBox(height: 10,),
                 const Text("Your Current Balance:",style: TextStyle(fontWeight: FontWeight.w500),),
-                //  Text(Provider.currentbalance.toString(),style: const TextStyle(fontSize: 30,fontWeight: FontWeight.w600,color: Color.fromARGB(255, 1, 66, 120)),),
+                Consumer<HomeProvider>(
+                  builder: (context, provider, child) {
+                    double currentBalance = provider.bal();
+                    return Text(
+                      currentBalance.toString(),
+                      style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w600, color: Color.fromARGB(255, 1, 66, 120)),
+                    );
+                  },
+                ),
                 Expanded(
                   child: Consumer<HomeProvider>(
                     builder: (context, Provider, child) => 

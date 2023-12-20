@@ -12,8 +12,8 @@ class HomeProvider extends ChangeNotifier{
               transactionmodel.discription.toLowerCase().contains(search.toLowerCase()))
           .toList();
   }
-
-  void bal(){
+  
+double bal(){
   double currentbalance = 0.0;
   double income = 0.0;
   double expence = 0.0;
@@ -26,5 +26,6 @@ class HomeProvider extends ChangeNotifier{
     }
   }
   currentbalance = income - expence;
+  return currentbalance;
   }
 }
