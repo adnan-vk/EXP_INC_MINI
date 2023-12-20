@@ -4,14 +4,9 @@ import 'package:mini/view/pages/login.dart';
 import 'package:mini/view/settings/privacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Settings extends StatefulWidget {
+class Settings extends StatelessWidget {
   const Settings({super.key});
 
-  @override
-  State<Settings> createState() => _SettingsState();
-}
-
-class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) { 
     double height = MediaQuery.of(context).size.height;
@@ -98,7 +93,7 @@ class _SettingsState extends State<Settings> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          sheet();
+                          sheet(context);
                         },
                         child: const Card(
                           color: Color.fromARGB(255, 95, 91, 91),
@@ -128,6 +123,7 @@ class _SettingsState extends State<Settings> {
       ),
     );
   }
+
   signout(BuildContext ctx) async{
     final sharedpre=await SharedPreferences.getInstance();
     await sharedpre.clear();
@@ -137,7 +133,7 @@ class _SettingsState extends State<Settings> {
 
   }
 
-  sheet(){
+  sheet(BuildContext context){
     return showDialog(context: context, builder: (context) {
       return AlertDialog(
         title: Column(
