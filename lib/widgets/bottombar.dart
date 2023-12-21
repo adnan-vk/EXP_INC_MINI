@@ -1,30 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:mini/controller/bottomprovider.dart';
 import 'package:mini/view/pages/add.dart';
 import 'package:mini/view/pages/hometab.dart';
 import 'package:mini/view/statistics/chart.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:mini/view/settings/settings.dart';
-int currentindex = 0;
-class Bottom extends StatefulWidget {
+import 'package:provider/provider.dart';
+
+class Bottom extends StatelessWidget {
   const Bottom({super.key});
 
   @override
-  State<Bottom> createState() => _BottomState();
-}
-
-
-final List _tabs = [
-  const HomeTab(),
-   MyChart(),
-  const Settings(),
-];
-
-class _BottomState extends State<Bottom> {
-  @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width; 
+    final providerdata = Provider.of<BottomProvider>(context);
     return Scaffold(
-      body: _tabs [currentindex],
+      body: _tabs [providerdata.currentindex],
       bottomNavigationBar: 
       Container(
         width: size*1,
@@ -33,9 +24,7 @@ class _BottomState extends State<Bottom> {
           padding: const EdgeInsets.all(13),
           child: GNav(
             onTabChange: (index){
-              setState(() {
-                currentindex = index;
-              });
+                providerdata.change(index);
             },
             backgroundColor:  const Color.fromARGB(255, 3, 45, 79),
             color: Colors.white,
@@ -66,3 +55,10 @@ class _BottomState extends State<Bottom> {
     );
   }
 }
+
+
+final List _tabs = [
+  const HomeTab(),
+   MyChart(),
+  const Settings(),
+];
