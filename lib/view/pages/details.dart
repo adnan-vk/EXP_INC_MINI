@@ -91,8 +91,7 @@ class Details extends StatelessWidget {
             ],
           ),
         ),
-      )
-        
+      )  
     );
   }
 }

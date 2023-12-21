@@ -6,11 +6,13 @@ import 'package:mini/function/function.dart';
 class MyChart extends StatelessWidget {
    MyChart({super.key});
 List Trans = transactionListNotifier.value;
+
  final List<Color> sectionColors = [
     Colors.green,
     Colors.orange,
     Colors.blue,
     Colors.red,
+    Colors.pink
   ];
 
   @override

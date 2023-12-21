@@ -53,7 +53,7 @@ class HomeTab extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 10,),
-                const Text("Your Current Balance:",style: TextStyle(fontWeight: FontWeight.w500),),
+                const Text("Your Current Balance is RS :",style: TextStyle(fontWeight: FontWeight.w500),),
                 Consumer<HomeProvider>(
                   builder: (context, provider, child) {
                     double currentBalance = provider.bal();

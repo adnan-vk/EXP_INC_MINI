@@ -130,7 +130,6 @@ class Settings extends StatelessWidget {
 
     Navigator.of(ctx).pushAndRemoveUntil(
         MaterialPageRoute(builder: (ctx) => const Login()), (route) => true,);
-
   }
 
   sheet(BuildContext context){

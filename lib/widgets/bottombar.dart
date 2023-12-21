@@ -55,8 +55,6 @@ class Bottom extends StatelessWidget {
     );
   }
 }
-
-
 final List _tabs = [
   const HomeTab(),
    MyChart(),

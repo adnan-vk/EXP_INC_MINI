@@ -26,8 +26,6 @@ class Login extends StatelessWidget {
                   right: 10,
                   bottom: 70
                 ),
-
-                
                 child: Image.asset('assets/logo 2.png'),
               ),
           ),

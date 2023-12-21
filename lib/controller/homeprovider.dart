@@ -5,7 +5,6 @@ import 'package:mini/model/model.dart';
 class HomeProvider extends ChangeNotifier{
   String search = "";
   List<transactionmodel> searchList = [];
-  // List<transactionmodel> srlist = [];
   void searchResult(value){
     searchList = transactionListNotifier.value
           .where((transactionmodel) =>
@@ -29,5 +28,4 @@ double bal(){
   currentbalance = income - expence;
   return currentbalance;
   }
-
 }
