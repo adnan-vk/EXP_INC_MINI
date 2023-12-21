@@ -8,7 +8,8 @@ import 'package:mini/controller/loginprovider.dart';
 import 'package:mini/model/model.dart';
 import 'package:mini/view/pages/splash.dart';
 import 'package:provider/provider.dart';
-final savekeyname = "user login";
+
+const savekeyname = "user login";
 Future<void> main(List<String> args)async {
   await Hive.initFlutter();
   if(!Hive.isAdapterRegistered(transactionmodelAdapter().typeId)){
